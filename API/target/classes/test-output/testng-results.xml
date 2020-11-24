@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="49" passed="48" failed="1" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2020-06-18T13:19:43 IST" name="Default suite" finished-at="2020-06-18T13:20:12 IST" duration-ms="29339">
+    <groups>
+    </groups>
+    <test started-at="2020-06-18T13:19:43 IST" name="Default test" finished-at="2020-06-18T13:20:12 IST" duration-ms="29339">
+      <class name="Execute.Execute_cases">
+        <test-method signature="generated_Random_MNO()[pri:1, instance:Execute.Execute_cases@3c9d0b9d]" started-at="2020-06-18T13:19:43 IST" name="generated_Random_MNO" finished-at="2020-06-18T13:19:43 IST" duration-ms="18" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- generated_Random_MNO -->
+        <test-method signature="Authentication()[pri:2, instance:Execute.Execute_cases@3c9d0b9d]" started-at="2020-06-18T13:19:43 IST" name="Authentication" finished-at="2020-06-18T13:19:51 IST" duration-ms="7533" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Authentication -->
+        <test-method signature="POST_OTP_Request()[pri:3, instance:Execute.Execute_cases@3c9d0b9d]" started-at="2020-06-18T13:19:51 IST" name="POST_OTP_Request" finished-at="2020-06-18T13:19:51 IST" duration-ms="6" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- POST_OTP_Request -->
+        <test-method signature="DB()[pri:4, instance:Execute.Execute_cases@3c9d0b9d]" started-at="2020-06-18T13:19:51 IST" name="DB" finished-at="2020-06-18T13:19:51 IST" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DB -->
+        <test-method signature="POST_OTP()[pri:5, instance:Execute.Execute_cases@3c9d0b9d]" started-at="2020-06-18T13:19:51 IST" name="POST_OTP" finished-at="2020-06-18T13:19:51 IST" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- POST_OTP -->
+        <test-method signature="reg_Passport()[pri:6, instance:Execute.Execute_cases@3c9d0b9d]" started-at="2020-06-18T13:19:51 IST" name="reg_Passport" finished-at="2020-06-18T13:19:51 IST" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reg_Passport -->
+        <test-method signature="set_Pass()[pri:7, instance:Execute.Execute_cases@3c9d0b9d]" started-at="2020-06-18T13:19:51 IST" name="set_Pass" finished-at="2020-06-18T13:19:51 IST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- set_Pass -->
+        <test-method signature="login()[pri:8, instance:Execute.Execute_cases@3c9d0b9d]" started-at="2020-06-18T13:19:51 IST" name="login" finished-at="2020-06-18T13:19:51 IST" duration-ms="820" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method signature="reload_123()[pri:9, instance:Execute.Execute_cases@3c9d0b9d]" started-at="2020-06-18T13:19:51 IST" name="reload_123" finished-at="2020-06-18T13:19:51 IST" duration-ms="17" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reload_123 -->
+        <test-method signature="get_Marketing_msg_List()[pri:10, instance:Execute.Execute_cases@3c9d0b9d]" started-at="2020-06-18T13:19:52 IST" name="get_Marketing_msg_List" finished-at="2020-06-18T13:19:52 IST" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- get_Marketing_msg_List -->
+        <test-method signature="get_MSG_Detail()[pri:11, instance:Execute.Execute_cases@3c9d0b9d]" started-at="2020-06-18T13:19:52 IST" name="get_MSG_Detail" finished-at="2020-06-18T13:19:52 IST" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- get_MSG_Detail -->
+        <test-method signature="get_Unread_MSG_Count()[pri:12, instance:Execute.Execute_cases@3c9d0b9d]" started-at="2020-06-18T13:19:52 IST" name="get_Unread_MSG_Count" finished-at="2020-06-18T13:19:52 IST" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- get_Unread_MSG_Count -->
+        <test-method signature="transfer()[pri:13, instance:Execute.Execute_cases@3c9d0b9d]" started-at="2020-06-18T13:19:52 IST" name="transfer" finished-at="2020-06-18T13:19:52 IST" duration-ms="803" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- transfer -->
+        <test-method signature="transfer_Lookup()[pri:14, instance:Execute.Execute_cases@3c9d0b9d]" started-at="2020-06-18T13:19:52 IST" name="transfer_Lookup" finished-at="2020-06-18T13:19:53 IST" duration-ms="454" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- transfer_Lookup -->
+        <test-method signature="eload_Enq_TeleData()[pri:15, instance:Execute.Execute_cases@3c9d0b9d]" started-at="2020-06-18T13:19:53 IST" name="eload_Enq_TeleData" finished-at="2020-06-18T13:19:53 IST" duration-ms="6" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- eload_Enq_TeleData -->
+        <test-method signature="eload_Confirm_TeleData()[pri:16, instance:Execute.Execute_cases@3c9d0b9d]" started-at="2020-06-18T13:19:53 IST" name="eload_Confirm_TeleData" finished-at="2020-06-18T13:19:53 IST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- eload_Confirm_TeleData -->
+        <test-method signature="eload_enq_MPTData()[pri:17, instance:Execute.Execute_cases@3c9d0b9d]" started-at="2020-06-18T13:19:53 IST" name="eload_enq_MPTData" finished-at="2020-06-18T13:19:53 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- eload_enq_MPTData -->
+        <test-method signature="eload_Confirm_MPTData()[pri:18, instance:Execute.Execute_cases@3c9d0b9d]" started-at="2020-06-18T13:19:53 IST" name="eload_Confirm_MPTData" finished-at="2020-06-18T13:19:53 IST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- eload_Confirm_MPTData -->
+        <test-method signature="donate_List()[pri:19, instance:Execute.Execute_cases@3c9d0b9d]" started-at="2020-06-18T13:19:53 IST" name="donate_List" finished-at="2020-06-18T13:19:53 IST" duration-ms="466" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- donate_List -->
+        <test-method signature="goods_Merchant_Category()[pri:20, instance:Execute.Execute_cases@3c9d0b9d]" started-at="2020-06-18T13:19:53 IST" name="goods_Merchant_Category" finished-at="2020-06-18T13:19:54 IST" duration-ms="508" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- goods_Merchant_Category -->
+        <test-method signature="goods_By_Merchant_ID()[pri:21, instance:Execute.Execute_cases@3c9d0b9d]" started-at="2020-06-18T13:19:54 IST" name="goods_By_Merchant_ID" finished-at="2020-06-18T13:19:54 IST" duration-ms="343" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- goods_By_Merchant_ID -->
+        <test-method signature="get_Meters()[pri:22, instance:Execute.Execute_cases@3c9d0b9d]" started-at="2020-06-18T13:19:54 IST" name="get_Meters" finished-at="2020-06-18T13:19:55 IST" duration-ms="434" status="FAIL">
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+at MSP_API.MSEC_Chart.GET_Meters(MSEC_Chart.java:38)
+at Execute.Execute_cases.get_Meters(Execute_cases.java:165)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1510)
+at org.testng.TestRunner.privateRun(TestRunner.java:766)
+at org.testng.TestRunner.run(TestRunner.java:587)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+at org.testng.TestNG.runSuites(TestNG.java:1039)
+at org.testng.TestNG.run(TestNG.java:1007)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- get_Meters -->
+        <test-method signature="get_Monthly_details()[pri:23, instance:Execute.Execute_cases@3c9d0b9d]" started-at="2020-06-18T13:19:55 IST" name="get_Monthly_details" finished-at="2020-06-18T13:19:55 IST" duration-ms="362" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- get_Monthly_details -->
+        <test-method signature="patch_Update_Nicjname()[pri:24, instance:Execute.Execute_cases@3c9d0b9d]" started-at="2020-06-18T13:19:55 IST" name="patch_Update_Nicjname" finished-at="2020-06-18T13:19:55 IST" duration-ms="345" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- patch_Update_Nicjname -->
+        <test-method signature="get_MSEC_District()[pri:25, instance:Execute.Execute_cases@3c9d0b9d]" started-at="2020-06-18T13:19:55 IST" name="get_MSEC_District" finished-at="2020-06-18T13:19:56 IST" duration-ms="375" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- get_MSEC_District -->
+        <test-method signature="extractingJSON()[pri:26, instance:Execute.Execute_cases@3c9d0b9d]" started-at="2020-06-18T13:19:56 IST" name="extractingJSON" finished-at="2020-06-18T13:19:56 IST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- extractingJSON -->
+        <test-method signature="inquiry()[pri:27, instance:Execute.Execute_cases@3c9d0b9d]" started-at="2020-06-18T13:19:56 IST" name="inquiry" finished-at="2020-06-18T13:19:56 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- inquiry -->
+        <test-method signature="user_Details()[pri:28, instance:Execute.Execute_cases@3c9d0b9d]" started-at="2020-06-18T13:19:56 IST" name="user_Details" finished-at="2020-06-18T13:19:57 IST" duration-ms="1417" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- user_Details -->
+        <test-method signature="txn_search_History()[pri:29, instance:Execute.Execute_cases@3c9d0b9d]" started-at="2020-06-18T13:19:57 IST" name="txn_search_History" finished-at="2020-06-18T13:19:58 IST" duration-ms="581" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- txn_search_History -->
+        <test-method signature="get_Greeting_Message()[pri:30, instance:Execute.Execute_cases@3c9d0b9d]" started-at="2020-06-18T13:19:58 IST" name="get_Greeting_Message" finished-at="2020-06-18T13:19:58 IST" duration-ms="389" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- get_Greeting_Message -->
+        <test-method signature="user_Donate_List()[pri:31, instance:Execute.Execute_cases@3c9d0b9d]" started-at="2020-06-18T13:19:58 IST" name="user_Donate_List" finished-at="2020-06-18T13:19:59 IST" duration-ms="349" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- user_Donate_List -->
+        <test-method signature="get_Internet_list()[pri:32, instance:Execute.Execute_cases@3c9d0b9d]" started-at="2020-06-18T13:19:59 IST" name="get_Internet_list" finished-at="2020-06-18T13:19:59 IST" duration-ms="356" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- get_Internet_list -->
+        <test-method signature="enquiry_Fees()[pri:33, instance:Execute.Execute_cases@3c9d0b9d]" started-at="2020-06-18T13:19:59 IST" name="enquiry_Fees" finished-at="2020-06-18T13:19:59 IST" duration-ms="441" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- enquiry_Fees -->
+        <test-method signature="get_Address_List()[pri:34, instance:Execute.Execute_cases@3c9d0b9d]" started-at="2020-06-18T13:19:59 IST" name="get_Address_List" finished-at="2020-06-18T13:20:00 IST" duration-ms="385" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- get_Address_List -->
+        <test-method signature="get_Address_Detail()[pri:35, instance:Execute.Execute_cases@3c9d0b9d]" started-at="2020-06-18T13:20:00 IST" name="get_Address_Detail" finished-at="2020-06-18T13:20:00 IST" duration-ms="326" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- get_Address_Detail -->
+        <test-method signature="add_Address()[pri:36, instance:Execute.Execute_cases@3c9d0b9d]" started-at="2020-06-18T13:20:00 IST" name="add_Address" finished-at="2020-06-18T13:20:00 IST" duration-ms="385" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- add_Address -->
+        <test-method signature="set_Primary_Address()[pri:37, instance:Execute.Execute_cases@3c9d0b9d]" started-at="2020-06-18T13:20:00 IST" name="set_Primary_Address" finished-at="2020-06-18T13:20:01 IST" duration-ms="371" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- set_Primary_Address -->
+        <test-method signature="update_Address()[pri:38, instance:Execute.Execute_cases@3c9d0b9d]" started-at="2020-06-18T13:20:01 IST" name="update_Address" finished-at="2020-06-18T13:20:01 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- update_Address -->
+        <test-method signature="delete_Address()[pri:39, instance:Execute.Execute_cases@3c9d0b9d]" started-at="2020-06-18T13:20:01 IST" name="delete_Address" finished-at="2020-06-18T13:20:01 IST" duration-ms="401" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- delete_Address -->
+        <test-method signature="enq_HiWiFi()[pri:40, instance:Execute.Execute_cases@3c9d0b9d]" started-at="2020-06-18T13:20:01 IST" name="enq_HiWiFi" finished-at="2020-06-18T13:20:02 IST" duration-ms="622" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- enq_HiWiFi -->
+        <test-method signature="confirm_HiWiFi()[pri:41, instance:Execute.Execute_cases@3c9d0b9d]" started-at="2020-06-18T13:20:02 IST" name="confirm_HiWiFi" finished-at="2020-06-18T13:20:03 IST" duration-ms="1311" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- confirm_HiWiFi -->
+        <test-method signature="enq_TelenorDataPack()[pri:42, instance:Execute.Execute_cases@3c9d0b9d]" started-at="2020-06-18T13:20:03 IST" name="enq_TelenorDataPack" finished-at="2020-06-18T13:20:04 IST" duration-ms="480" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- enq_TelenorDataPack -->
+        <test-method signature="enq_HIWIFI_W0_Mobile()[pri:43, instance:Execute.Execute_cases@3c9d0b9d]" started-at="2020-06-18T13:20:04 IST" name="enq_HIWIFI_W0_Mobile" finished-at="2020-06-18T13:20:04 IST" duration-ms="421" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- enq_HIWIFI_W0_Mobile -->
+        <test-method signature="enq_MyanmarNetPrepaid()[pri:44, instance:Execute.Execute_cases@3c9d0b9d]" started-at="2020-06-18T13:20:04 IST" name="enq_MyanmarNetPrepaid" finished-at="2020-06-18T13:20:08 IST" duration-ms="4227" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- enq_MyanmarNetPrepaid -->
+        <test-method signature="enq_telenor_Fiber()[pri:45, instance:Execute.Execute_cases@3c9d0b9d]" started-at="2020-06-18T13:20:08 IST" name="enq_telenor_Fiber" finished-at="2020-06-18T13:20:09 IST" duration-ms="496" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- enq_telenor_Fiber -->
+        <test-method signature="enq_telenor_Wireless()[pri:46, instance:Execute.Execute_cases@3c9d0b9d]" started-at="2020-06-18T13:20:09 IST" name="enq_telenor_Wireless" finished-at="2020-06-18T13:20:09 IST" duration-ms="510" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- enq_telenor_Wireless -->
+        <test-method signature="enq_MyanmarNetAWaThone()[pri:47, instance:Execute.Execute_cases@3c9d0b9d]" started-at="2020-06-18T13:20:09 IST" name="enq_MyanmarNetAWaThone" finished-at="2020-06-18T13:20:10 IST" duration-ms="519" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- enq_MyanmarNetAWaThone -->
+        <test-method signature="confirm_TeleData()[pri:48, instance:Execute.Execute_cases@3c9d0b9d]" started-at="2020-06-18T13:20:10 IST" name="confirm_TeleData" finished-at="2020-06-18T13:20:11 IST" duration-ms="1314" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- confirm_TeleData -->
+        <test-method signature="confirm_HiWiFi_mobile()[pri:49, instance:Execute.Execute_cases@3c9d0b9d]" started-at="2020-06-18T13:20:11 IST" name="confirm_HiWiFi_mobile" finished-at="2020-06-18T13:20:12 IST" duration-ms="1025" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- confirm_HiWiFi_mobile -->
+      </class> <!-- Execute.Execute_cases -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

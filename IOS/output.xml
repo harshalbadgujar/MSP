@@ -1,0 +1,3296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.1 (Python 3.7.7 on darwin)" generated="20200701 13:04:07.338" rpa="false">
+<suite id="s1" name="Testtest" source="/Users/administrator/Documents/msp-automation/IOS/Testtest.robot">
+<test id="s1-t1" name="To verify Forgot passcode functionality">
+<kw name="Open App" library="Global Keyword">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>automationName=appium</arg>
+<arg>appLocation=${APP_LOCATION}</arg>
+<arg>bundleId=${BUNDLE_ID}</arg>
+<arg>appActivity=${AppActivity}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:04:07.787" endtime="20200701 13:04:10.549"></status>
+</kw>
+<status status="PASS" starttime="20200701 13:04:07.786" endtime="20200701 13:04:10.549"></status>
+</kw>
+<kw name="Login with the number and click on forgot passcode" library="Forgot Passcode">
+<arguments>
+<arg>@{ChangePassCode}[0]</arg>
+<arg>@{ChangePassCode}[1]</arg>
+</arguments>
+<msg timestamp="20200701 13:04:10.550" level="WARN">Accessing variable items using '@{ChangePassCode}[0]' syntax is deprecated. Use '${ChangePassCode}[0]' instead.</msg>
+<msg timestamp="20200701 13:04:10.550" level="WARN">Accessing variable items using '@{ChangePassCode}[1]' syntax is deprecated. Use '${ChangePassCode}[1]' instead.</msg>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>WAIT UNTIL ELEMENT IS VISIBLE</arg>
+<arg>//XCUIElementTypeButton[@name="Allow"]</arg>
+</arguments>
+<assign>
+<var>${check}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//XCUIElementTypeButton[@name="Allow"]</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20200701 13:04:15.891" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200701 13:04:15.769" endtime="20200701 13:04:15.891"></status>
+</kw>
+<msg timestamp="20200701 13:04:15.892" level="FAIL">Element locator '//XCUIElementTypeButton[@name="Allow"]' did not match any elements after 5 seconds</msg>
+<status status="FAIL" starttime="20200701 13:04:10.551" endtime="20200701 13:04:15.892"></status>
+</kw>
+<msg timestamp="20200701 13:04:15.892" level="INFO">${check} = False</msg>
+<status status="PASS" starttime="20200701 13:04:10.551" endtime="20200701 13:04:15.892"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${check}</arg>
+<arg>Tap</arg>
+<arg>//XCUIElementTypeButton[@name="Allow"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:04:15.892" endtime="20200701 13:04:15.893"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>WAIT UNTIL ELEMENT IS VISIBLE</arg>
+<arg>//XCUIElementTypeStaticText[@value="ENTER PASSCODE"]</arg>
+<arg>5s</arg>
+</arguments>
+<assign>
+<var>${check1}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//XCUIElementTypeStaticText[@value="ENTER PASSCODE"]</arg>
+<arg>5s</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20200701 13:04:21.034" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-2.png"&gt;&lt;img src="appium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200701 13:04:20.933" endtime="20200701 13:04:21.034"></status>
+</kw>
+<msg timestamp="20200701 13:04:21.034" level="FAIL">Element locator '//XCUIElementTypeStaticText[@value="ENTER PASSCODE"]' did not match any elements after 5 seconds</msg>
+<status status="FAIL" starttime="20200701 13:04:15.893" endtime="20200701 13:04:21.034"></status>
+</kw>
+<msg timestamp="20200701 13:04:21.035" level="INFO">${check1} = False</msg>
+<status status="PASS" starttime="20200701 13:04:15.893" endtime="20200701 13:04:21.035"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${check1}</arg>
+<arg>Tap</arg>
+<arg>//XCUIElementTypeButton[@name="Back"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:04:21.035" endtime="20200701 13:04:21.035"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//XCUIElementTypeStaticText[@name="Already have an account? SIGN IN"]</arg>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:04:21.035" endtime="20200701 13:04:21.314"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeStaticText[@name="Already have an account? SIGN IN"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:04:21.314" endtime="20200701 13:04:21.788"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//*[contains(@value, 'Enter your mobile no.')]</arg>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:04:21.788" endtime="20200701 13:04:22.456"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//*[contains(@value, 'Enter your mobile no.')]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:04:22.456" endtime="20200701 13:04:23.068"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//*[contains(@value, 'Enter your mobile no.')]</arg>
+<arg>${MobileChangePasscode}</arg>
+</arguments>
+<msg timestamp="20200701 13:04:23.078" level="INFO">Typing text '0911228888' into text field '//*[contains(@value, 'Enter your mobile no.')]'</msg>
+<status status="PASS" starttime="20200701 13:04:23.068" endtime="20200701 13:04:23.838"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//XCUIElementTypeStaticText[@name="SIGN IN"]</arg>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:04:23.838" endtime="20200701 13:04:24.143"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeStaticText[@name="SIGN IN"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:04:24.143" endtime="20200701 13:04:24.557"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>WAIT UNTIL ELEMENT IS VISIBLE</arg>
+<arg>//XCUIElementTypeStaticText[@name="prefix_otp_label"]</arg>
+<arg>10s</arg>
+</arguments>
+<assign>
+<var>${statusOTP}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//XCUIElementTypeStaticText[@name="prefix_otp_label"]</arg>
+<arg>10s</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20200701 13:04:34.865" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-3.png"&gt;&lt;img src="appium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200701 13:04:34.799" endtime="20200701 13:04:34.865"></status>
+</kw>
+<msg timestamp="20200701 13:04:34.866" level="FAIL">Element locator '//XCUIElementTypeStaticText[@name="prefix_otp_label"]' did not match any elements after 10 seconds</msg>
+<status status="FAIL" starttime="20200701 13:04:24.558" endtime="20200701 13:04:34.866"></status>
+</kw>
+<msg timestamp="20200701 13:04:34.866" level="INFO">${statusOTP} = False</msg>
+<status status="PASS" starttime="20200701 13:04:24.557" endtime="20200701 13:04:34.866"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${statusOTP}"=="True"</arg>
+<arg>Enter OTP</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:04:34.866" endtime="20200701 13:04:34.866"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//XCUIElementTypeStaticText[@name="Forgot Passcode?"]</arg>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:04:34.867" endtime="20200701 13:04:35.300"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeStaticText[@name="Forgot Passcode?"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:04:35.300" endtime="20200701 13:04:35.816"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${PassportButton}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:04:35.817" endtime="20200701 13:04:36.497"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20200701 13:04:39.498" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20200701 13:04:36.497" endtime="20200701 13:04:39.499"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//*[contains(@value, 'Enter passport no.')]</arg>
+<arg>${Passport}</arg>
+</arguments>
+<msg timestamp="20200701 13:04:39.508" level="INFO">Typing text 'forgot1234' into text field '//*[contains(@value, 'Enter passport no.')]'</msg>
+<status status="PASS" starttime="20200701 13:04:39.499" endtime="20200701 13:04:41.588"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeButton[@name="Done"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:04:41.588" endtime="20200701 13:04:42.182"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//*[@value="CONTINUE"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:04:42.182" endtime="20200701 13:04:42.724"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>WAIT UNTIL ELEMENT IS VISIBLE</arg>
+<arg>id=title_label</arg>
+<arg>10s</arg>
+</arguments>
+<assign>
+<var>${statusOTP}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>id=title_label</arg>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:04:42.726" endtime="20200701 13:04:43.830"></status>
+</kw>
+<msg timestamp="20200701 13:04:43.830" level="INFO">${statusOTP} = True</msg>
+<status status="PASS" starttime="20200701 13:04:42.725" endtime="20200701 13:04:43.830"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${statusOTP}"=="True"</arg>
+<arg>Enter OTP</arg>
+</arguments>
+<kw name="Enter OTP" library="Global Keyword">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4s</arg>
+</arguments>
+<msg timestamp="20200701 13:04:47.831" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20200701 13:04:43.831" endtime="20200701 13:04:47.832"></status>
+</kw>
+<kw name="Get Text" library="AppiumLibrary">
+<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
+<arguments>
+<arg>${LocateOTPPrefix}</arg>
+</arguments>
+<assign>
+<var>${OTPPrefix}</var>
+</assign>
+<msg timestamp="20200701 13:04:48.030" level="INFO">Element 'id=prefix_otp_label' text is 'XEFB' </msg>
+<msg timestamp="20200701 13:04:48.030" level="INFO">${OTPPrefix} = XEFB</msg>
+<status status="PASS" starttime="20200701 13:04:47.832" endtime="20200701 13:04:48.030"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${OTPPrefix}</arg>
+</arguments>
+<msg timestamp="20200701 13:04:48.031" level="INFO">XEFB</msg>
+<status status="PASS" starttime="20200701 13:04:48.031" endtime="20200701 13:04:48.031"></status>
+</kw>
+<kw name="Get OTP" library="db">
+<arguments>
+<arg>${OTPPrefix}</arg>
+</arguments>
+<assign>
+<var>${OTP}</var>
+</assign>
+<kw name="Return Row" library="DB_Config">
+<arguments>
+<arg>select TOP 1 * from OTP where OTP_Prefix= '${OTPPrefix}' order by ID desc</arg>
+<arg>${dbname}</arg>
+<arg>${dbusername}</arg>
+<arg>${dbpassword}</arg>
+<arg>${dbhost}</arg>
+<arg>${dbport}</arg>
+<arg>${dbdriver}</arg>
+</arguments>
+<assign>
+<var>@{queryresult}</var>
+</assign>
+<msg timestamp="20200701 13:04:48.905" level="INFO">@{queryresult} = [ 72009 | 2020-07-01 14:35:22.190000 | 0911228888 | None | XEFB | 926884 | Y | 2020-07-01 14:40:22.190000 | 008 | None | 95 ]</msg>
+<status status="PASS" starttime="20200701 13:04:48.032" endtime="20200701 13:04:48.905"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>OTP_Prefix @{queryresult}[4]</arg>
+</arguments>
+<msg timestamp="20200701 13:04:48.905" level="WARN">Accessing variable items using '@{queryresult}[4]' syntax is deprecated. Use '${queryresult}[4]' instead.</msg>
+<status status="PASS" starttime="20200701 13:04:48.905" endtime="20200701 13:04:48.906"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>OTP_Value @{queryresult}[5]</arg>
+</arguments>
+<msg timestamp="20200701 13:04:48.906" level="WARN">Accessing variable items using '@{queryresult}[5]' syntax is deprecated. Use '${queryresult}[5]' instead.</msg>
+<status status="PASS" starttime="20200701 13:04:48.906" endtime="20200701 13:04:48.907"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>OTP_Prefix @{queryresult}[4]</arg>
+</arguments>
+<msg timestamp="20200701 13:04:48.907" level="WARN">Accessing variable items using '@{queryresult}[4]' syntax is deprecated. Use '${queryresult}[4]' instead.</msg>
+<msg timestamp="20200701 13:04:48.907" level="INFO">OTP_Prefix XEFB</msg>
+<status status="PASS" starttime="20200701 13:04:48.907" endtime="20200701 13:04:48.907"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>OTP_Value @{queryresult}[5]</arg>
+</arguments>
+<msg timestamp="20200701 13:04:48.908" level="WARN">Accessing variable items using '@{queryresult}[5]' syntax is deprecated. Use '${queryresult}[5]' instead.</msg>
+<msg timestamp="20200701 13:04:48.908" level="INFO">OTP_Value 926884</msg>
+<status status="PASS" starttime="20200701 13:04:48.908" endtime="20200701 13:04:48.908"></status>
+</kw>
+<msg timestamp="20200701 13:04:48.908" level="WARN">Accessing variable items using '@{queryresult}[5]' syntax is deprecated. Use '${queryresult}[5]' instead.</msg>
+<msg timestamp="20200701 13:04:48.909" level="INFO">${OTP} = 926884</msg>
+<status status="PASS" starttime="20200701 13:04:48.031" endtime="20200701 13:04:48.909"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${OTP}</arg>
+</arguments>
+<msg timestamp="20200701 13:04:48.909" level="INFO">926884</msg>
+<status status="PASS" starttime="20200701 13:04:48.909" endtime="20200701 13:04:48.909"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${LocateInputOTP}</arg>
+<arg>${OTP}</arg>
+</arguments>
+<msg timestamp="20200701 13:04:48.921" level="INFO">Typing text '926884' into text field '//XCUIElementTypeApplication[@name="MSP-UAT"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther'</msg>
+<status status="PASS" starttime="20200701 13:04:48.909" endtime="20200701 13:04:49.784"></status>
+</kw>
+<status status="PASS" starttime="20200701 13:04:43.831" endtime="20200701 13:04:49.784"></status>
+</kw>
+<status status="PASS" starttime="20200701 13:04:43.830" endtime="20200701 13:04:49.785"></status>
+</kw>
+<status status="PASS" starttime="20200701 13:04:10.550" endtime="20200701 13:04:49.785"></status>
+</kw>
+<kw name="Set the new passcode" library="Forgot Passcode">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="1"]</arg>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:04:49.785" endtime="20200701 13:04:51.327"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="1"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:04:51.328" endtime="20200701 13:04:51.839"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="2"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:04:51.839" endtime="20200701 13:04:52.352"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="3"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:04:52.352" endtime="20200701 13:04:52.860"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="4"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:04:52.860" endtime="20200701 13:04:53.371"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="5"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:04:53.372" endtime="20200701 13:04:53.892"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="6"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:04:53.892" endtime="20200701 13:04:54.412"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="1"]</arg>
+<arg>5s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:04:54.413" endtime="20200701 13:04:54.819"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="1"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:04:54.819" endtime="20200701 13:04:55.337"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="2"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:04:55.337" endtime="20200701 13:04:55.864"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="3"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:04:55.865" endtime="20200701 13:04:56.382"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="4"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:04:56.382" endtime="20200701 13:04:56.910"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="5"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:04:56.910" endtime="20200701 13:04:57.430"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="6"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:04:57.430" endtime="20200701 13:04:57.928"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${OKbutton}</arg>
+<arg>30s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:04:57.928" endtime="20200701 13:05:02.422"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${OKbutton}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:02.422" endtime="20200701 13:05:02.818"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${LocateHambergeriCon}</arg>
+<arg>20s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:02.818" endtime="20200701 13:05:05.085"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>Change_Passcode_Success.png</arg>
+</arguments>
+<msg timestamp="20200701 13:05:05.199" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Change_Passcode_Success.png"&gt;&lt;img src="Change_Passcode_Success.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200701 13:05:05.085" endtime="20200701 13:05:05.199"></status>
+</kw>
+<status status="PASS" starttime="20200701 13:04:49.785" endtime="20200701 13:05:05.199"></status>
+</kw>
+<kw name="Check the login by entering old passcode" library="Forgot Passcode">
+<arguments>
+<arg>@{ChangePassCode}[0]</arg>
+</arguments>
+<msg timestamp="20200701 13:05:05.199" level="WARN">Accessing variable items using '@{ChangePassCode}[0]' syntax is deprecated. Use '${ChangePassCode}[0]' instead.</msg>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${LocateHambergeriCon}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:05.200" endtime="20200701 13:05:05.721"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeStaticText[@name="SIGN OUT"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:05.721" endtime="20200701 13:05:06.591"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//XCUIElementTypeStaticText[@name="Already have an account? SIGN IN"]</arg>
+<arg>5s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:06.591" endtime="20200701 13:05:09.062"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeStaticText[@name="Already have an account? SIGN IN"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:09.062" endtime="20200701 13:05:09.441"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//*[contains(@value, 'Enter your mobile no.')]</arg>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:09.441" endtime="20200701 13:05:09.863"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//*[contains(@value, 'Enter your mobile no.')]</arg>
+<arg>${MobileChangePasscode}</arg>
+</arguments>
+<msg timestamp="20200701 13:05:09.875" level="INFO">Typing text '0911228888' into text field '//*[contains(@value, 'Enter your mobile no.')]'</msg>
+<status status="PASS" starttime="20200701 13:05:09.863" endtime="20200701 13:05:10.652"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//XCUIElementTypeStaticText[@name="SIGN IN"]</arg>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:10.652" endtime="20200701 13:05:10.981"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeStaticText[@name="SIGN IN"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:10.981" endtime="20200701 13:05:11.496"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="1"]</arg>
+<arg>30s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:11.496" endtime="20200701 13:05:12.989"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="1"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:12.989" endtime="20200701 13:05:13.502"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="1"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:13.502" endtime="20200701 13:05:13.915"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="1"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:13.916" endtime="20200701 13:05:14.443"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="1"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:14.444" endtime="20200701 13:05:14.963"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="1"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:14.963" endtime="20200701 13:05:15.370"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="1"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:15.370" endtime="20200701 13:05:15.886"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${locateEnterPasscodeFailed}</arg>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:15.886" endtime="20200701 13:05:16.590"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${OKbutton}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:16.591" endtime="20200701 13:05:16.931"></status>
+</kw>
+<status status="PASS" starttime="20200701 13:05:05.199" endtime="20200701 13:05:16.932"></status>
+</kw>
+<kw name="Enter New Passcode" library="Forgot Passcode">
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="1"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:16.934" endtime="20200701 13:05:17.523"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="2"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:17.523" endtime="20200701 13:05:18.029"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="3"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:18.029" endtime="20200701 13:05:18.534"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="4"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:18.535" endtime="20200701 13:05:19.054"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="5"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:19.055" endtime="20200701 13:05:19.567"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="6"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:19.567" endtime="20200701 13:05:20.091"></status>
+</kw>
+<status status="PASS" starttime="20200701 13:05:16.933" endtime="20200701 13:05:20.091"></status>
+</kw>
+<kw name="Reset the previous passcode again" library="Forgot Passcode">
+<arguments>
+<arg>@{ChangePassCode}[0]</arg>
+<arg>@{ChangePassCode}[1]</arg>
+</arguments>
+<msg timestamp="20200701 13:05:20.092" level="WARN">Accessing variable items using '@{ChangePassCode}[0]' syntax is deprecated. Use '${ChangePassCode}[0]' instead.</msg>
+<msg timestamp="20200701 13:05:20.092" level="WARN">Accessing variable items using '@{ChangePassCode}[1]' syntax is deprecated. Use '${ChangePassCode}[1]' instead.</msg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${LocateHambergeriCon}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:20.093" endtime="20200701 13:05:21.833"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${LocateHambergeriCon}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:21.833" endtime="20200701 13:05:22.381"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeStaticText[@name="SIGN OUT"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:22.382" endtime="20200701 13:05:23.264"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//XCUIElementTypeStaticText[@name="Already have an account? SIGN IN"]</arg>
+<arg>5s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:23.265" endtime="20200701 13:05:26.402"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeStaticText[@name="Already have an account? SIGN IN"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:26.402" endtime="20200701 13:05:26.873"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//*[contains(@value, 'Enter your mobile no.')]</arg>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:26.873" endtime="20200701 13:05:27.267"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//*[contains(@value, 'Enter your mobile no.')]</arg>
+<arg>${MobileChangePasscode}</arg>
+</arguments>
+<msg timestamp="20200701 13:05:27.279" level="INFO">Typing text '0911228888' into text field '//*[contains(@value, 'Enter your mobile no.')]'</msg>
+<status status="PASS" starttime="20200701 13:05:27.268" endtime="20200701 13:05:28.040"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//XCUIElementTypeStaticText[@name="SIGN IN"]</arg>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:28.041" endtime="20200701 13:05:28.360"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeStaticText[@name="SIGN IN"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:28.360" endtime="20200701 13:05:28.775"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//XCUIElementTypeStaticText[@name="Forgot Passcode?"]</arg>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:28.776" endtime="20200701 13:05:31.782"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeStaticText[@name="Forgot Passcode?"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:31.782" endtime="20200701 13:05:32.297"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${PassportButton}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:32.297" endtime="20200701 13:05:33.090"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${LocateEnterPassport}</arg>
+<arg>${Passport}</arg>
+</arguments>
+<msg timestamp="20200701 13:05:33.099" level="INFO">Typing text 'forgot1234' into text field 'xpath=//*[contains(@value, 'Enter passport no.')]'</msg>
+<status status="PASS" starttime="20200701 13:05:33.090" endtime="20200701 13:05:35.211"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeButton[@name="Done"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:35.211" endtime="20200701 13:05:35.786"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${ContinueButton}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:35.786" endtime="20200701 13:05:36.232"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>WAIT UNTIL ELEMENT IS VISIBLE</arg>
+<arg>id=title_label</arg>
+<arg>10s</arg>
+</arguments>
+<assign>
+<var>${statusOTP}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>id=title_label</arg>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:36.233" endtime="20200701 13:05:39.570"></status>
+</kw>
+<msg timestamp="20200701 13:05:39.571" level="INFO">${statusOTP} = True</msg>
+<status status="PASS" starttime="20200701 13:05:36.232" endtime="20200701 13:05:39.571"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${statusOTP}"=="True"</arg>
+<arg>Enter OTP</arg>
+</arguments>
+<kw name="Enter OTP" library="Global Keyword">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4s</arg>
+</arguments>
+<msg timestamp="20200701 13:05:43.572" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20200701 13:05:39.572" endtime="20200701 13:05:43.572"></status>
+</kw>
+<kw name="Get Text" library="AppiumLibrary">
+<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
+<arguments>
+<arg>${LocateOTPPrefix}</arg>
+</arguments>
+<assign>
+<var>${OTPPrefix}</var>
+</assign>
+<msg timestamp="20200701 13:05:43.770" level="INFO">Element 'id=prefix_otp_label' text is 'TPAV' </msg>
+<msg timestamp="20200701 13:05:43.770" level="INFO">${OTPPrefix} = TPAV</msg>
+<status status="PASS" starttime="20200701 13:05:43.573" endtime="20200701 13:05:43.770"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${OTPPrefix}</arg>
+</arguments>
+<msg timestamp="20200701 13:05:43.770" level="INFO">TPAV</msg>
+<status status="PASS" starttime="20200701 13:05:43.770" endtime="20200701 13:05:43.771"></status>
+</kw>
+<kw name="Get OTP" library="db">
+<arguments>
+<arg>${OTPPrefix}</arg>
+</arguments>
+<assign>
+<var>${OTP}</var>
+</assign>
+<kw name="Return Row" library="DB_Config">
+<arguments>
+<arg>select TOP 1 * from OTP where OTP_Prefix= '${OTPPrefix}' order by ID desc</arg>
+<arg>${dbname}</arg>
+<arg>${dbusername}</arg>
+<arg>${dbpassword}</arg>
+<arg>${dbhost}</arg>
+<arg>${dbport}</arg>
+<arg>${dbdriver}</arg>
+</arguments>
+<assign>
+<var>@{queryresult}</var>
+</assign>
+<msg timestamp="20200701 13:05:44.609" level="INFO">@{queryresult} = [ 72010 | 2020-07-01 14:36:15.630000 | 0911228888 | None | TPAV | 784247 | Y | 2020-07-01 14:41:15.630000 | 008 | None | 95 ]</msg>
+<status status="PASS" starttime="20200701 13:05:43.771" endtime="20200701 13:05:44.610"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>OTP_Prefix @{queryresult}[4]</arg>
+</arguments>
+<msg timestamp="20200701 13:05:44.610" level="WARN">Accessing variable items using '@{queryresult}[4]' syntax is deprecated. Use '${queryresult}[4]' instead.</msg>
+<status status="PASS" starttime="20200701 13:05:44.610" endtime="20200701 13:05:44.610"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>OTP_Value @{queryresult}[5]</arg>
+</arguments>
+<msg timestamp="20200701 13:05:44.611" level="WARN">Accessing variable items using '@{queryresult}[5]' syntax is deprecated. Use '${queryresult}[5]' instead.</msg>
+<status status="PASS" starttime="20200701 13:05:44.611" endtime="20200701 13:05:44.611"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>OTP_Prefix @{queryresult}[4]</arg>
+</arguments>
+<msg timestamp="20200701 13:05:44.611" level="WARN">Accessing variable items using '@{queryresult}[4]' syntax is deprecated. Use '${queryresult}[4]' instead.</msg>
+<msg timestamp="20200701 13:05:44.611" level="INFO">OTP_Prefix TPAV</msg>
+<status status="PASS" starttime="20200701 13:05:44.611" endtime="20200701 13:05:44.611"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>OTP_Value @{queryresult}[5]</arg>
+</arguments>
+<msg timestamp="20200701 13:05:44.612" level="WARN">Accessing variable items using '@{queryresult}[5]' syntax is deprecated. Use '${queryresult}[5]' instead.</msg>
+<msg timestamp="20200701 13:05:44.612" level="INFO">OTP_Value 784247</msg>
+<status status="PASS" starttime="20200701 13:05:44.612" endtime="20200701 13:05:44.612"></status>
+</kw>
+<msg timestamp="20200701 13:05:44.612" level="WARN">Accessing variable items using '@{queryresult}[5]' syntax is deprecated. Use '${queryresult}[5]' instead.</msg>
+<msg timestamp="20200701 13:05:44.612" level="INFO">${OTP} = 784247</msg>
+<status status="PASS" starttime="20200701 13:05:43.771" endtime="20200701 13:05:44.612"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${OTP}</arg>
+</arguments>
+<msg timestamp="20200701 13:05:44.613" level="INFO">784247</msg>
+<status status="PASS" starttime="20200701 13:05:44.613" endtime="20200701 13:05:44.613"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${LocateInputOTP}</arg>
+<arg>${OTP}</arg>
+</arguments>
+<msg timestamp="20200701 13:05:44.623" level="INFO">Typing text '784247' into text field '//XCUIElementTypeApplication[@name="MSP-UAT"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther'</msg>
+<status status="PASS" starttime="20200701 13:05:44.613" endtime="20200701 13:05:45.755"></status>
+</kw>
+<status status="PASS" starttime="20200701 13:05:39.571" endtime="20200701 13:05:45.756"></status>
+</kw>
+<status status="PASS" starttime="20200701 13:05:39.571" endtime="20200701 13:05:45.756"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="1"]</arg>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:45.756" endtime="20200701 13:05:47.295"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="1"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:47.296" endtime="20200701 13:05:47.712"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="1"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:47.713" endtime="20200701 13:05:48.228"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="1"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:48.228" endtime="20200701 13:05:48.742"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="1"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:48.743" endtime="20200701 13:05:49.254"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="1"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:49.254" endtime="20200701 13:05:49.762"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="1"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:49.763" endtime="20200701 13:05:50.284"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="1"]</arg>
+<arg>5s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:50.285" endtime="20200701 13:05:50.707"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="1"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:50.708" endtime="20200701 13:05:51.349"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="1"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:51.349" endtime="20200701 13:05:51.857"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="1"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:51.857" endtime="20200701 13:05:52.380"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="1"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:52.380" endtime="20200701 13:05:52.807"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="1"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:52.807" endtime="20200701 13:05:53.330"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="1"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:53.330" endtime="20200701 13:05:53.836"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${OKbutton}</arg>
+<arg>30s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:53.837" endtime="20200701 13:05:55.690"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${OKbutton}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:55.691" endtime="20200701 13:05:56.090"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${LocateHambergeriCon}</arg>
+<arg>20s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:56.091" endtime="20200701 13:05:56.690"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>Change_Passcode_Success.png</arg>
+</arguments>
+<msg timestamp="20200701 13:05:56.802" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Change_Passcode_Success.png"&gt;&lt;img src="Change_Passcode_Success.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200701 13:05:56.690" endtime="20200701 13:05:56.802"></status>
+</kw>
+<status status="PASS" starttime="20200701 13:05:20.092" endtime="20200701 13:05:56.802"></status>
+</kw>
+<status status="PASS" starttime="20200701 13:04:07.786" endtime="20200701 13:05:56.803" critical="yes"></status>
+</test>
+<test id="s1-t2" name="To verify login with unregister number">
+<kw name="Open App" library="Global Keyword">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>automationName=appium</arg>
+<arg>appLocation=${APP_LOCATION}</arg>
+<arg>bundleId=${BUNDLE_ID}</arg>
+<arg>appActivity=${AppActivity}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:56.804" endtime="20200701 13:05:59.416"></status>
+</kw>
+<status status="PASS" starttime="20200701 13:05:56.804" endtime="20200701 13:05:59.416"></status>
+</kw>
+<kw name="Enter unregister number" library="Login">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>WAIT UNTIL ELEMENT IS VISIBLE</arg>
+<arg>${Enterpasscodetext}</arg>
+<arg>10S</arg>
+</arguments>
+<assign>
+<var>${check}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${Enterpasscodetext}</arg>
+<arg>10S</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:05:59.417" endtime="20200701 13:06:01.412"></status>
+</kw>
+<msg timestamp="20200701 13:06:01.413" level="INFO">${check} = True</msg>
+<status status="PASS" starttime="20200701 13:05:59.416" endtime="20200701 13:06:01.413"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${check}</arg>
+<arg>sleep</arg>
+<arg>3s</arg>
+</arguments>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20200701 13:06:04.415" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20200701 13:06:01.414" endtime="20200701 13:06:04.416"></status>
+</kw>
+<status status="PASS" starttime="20200701 13:06:01.413" endtime="20200701 13:06:04.416"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${check}</arg>
+<arg>Tap</arg>
+<arg>${backbtnonpasspage}</arg>
+</arguments>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${backbtnonpasspage}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:06:04.417" endtime="20200701 13:06:04.942"></status>
+</kw>
+<status status="PASS" starttime="20200701 13:06:04.416" endtime="20200701 13:06:04.942"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${Signinbtn}</arg>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:06:04.943" endtime="20200701 13:06:05.502"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${Signinbtn}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:06:05.502" endtime="20200701 13:06:05.910"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${mobilefield}</arg>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:06:05.911" endtime="20200701 13:06:06.319"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${mobilefield}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:06:06.319" endtime="20200701 13:06:06.893"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${mobilefield}</arg>
+<arg>090000009</arg>
+</arguments>
+<msg timestamp="20200701 13:06:06.905" level="INFO">Typing text '090000009' into text field '//*[contains(@value, 'Enter your mobile no.')]'</msg>
+<status status="PASS" starttime="20200701 13:06:06.894" endtime="20200701 13:06:07.557"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${loginbutton}</arg>
+<arg>3s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:06:07.557" endtime="20200701 13:06:07.875"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${loginbutton}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:06:07.875" endtime="20200701 13:06:08.408"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${errormsg}</arg>
+<arg>5s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:06:08.408" endtime="20200701 13:06:09.056"></status>
+</kw>
+<kw name="Get Text" library="AppiumLibrary">
+<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
+<arguments>
+<arg>${errormsg}</arg>
+</arguments>
+<assign>
+<var>${geterrormsg}</var>
+</assign>
+<msg timestamp="20200701 13:06:09.297" level="INFO">Element '//XCUIElementTypeStaticText[@name="description_label"]' text is 'Mobile number not found/Terminated' </msg>
+<msg timestamp="20200701 13:06:09.298" level="INFO">${geterrormsg} = Mobile number not found/Terminated</msg>
+<status status="PASS" starttime="20200701 13:06:09.056" endtime="20200701 13:06:09.298"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${geterrormsg}</arg>
+</arguments>
+<msg timestamp="20200701 13:06:09.298" level="INFO">Mobile number not found/Terminated</msg>
+<status status="PASS" starttime="20200701 13:06:09.298" endtime="20200701 13:06:09.298"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${okerrorpopup}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:06:09.299" endtime="20200701 13:06:09.826"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>should be equal</arg>
+<arg>${saveerrormsg}</arg>
+<arg>${geterrormsg}</arg>
+</arguments>
+<assign>
+<var>${checkmsg}</var>
+</assign>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${saveerrormsg}</arg>
+<arg>${geterrormsg}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:06:09.827" endtime="20200701 13:06:09.827"></status>
+</kw>
+<msg timestamp="20200701 13:06:09.827" level="INFO">${checkmsg} = True</msg>
+<status status="PASS" starttime="20200701 13:06:09.826" endtime="20200701 13:06:09.827"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${checkmsg}</arg>
+<arg>log to console</arg>
+<arg>The error msg is correct</arg>
+</arguments>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>The error msg is correct</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:06:09.828" endtime="20200701 13:06:09.828"></status>
+</kw>
+<status status="PASS" starttime="20200701 13:06:09.828" endtime="20200701 13:06:09.828"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${checkmsg} == "False"</arg>
+<arg>log to console</arg>
+<arg>The error msg is not correct</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:06:09.828" endtime="20200701 13:06:09.828"></status>
+</kw>
+<status status="PASS" starttime="20200701 13:05:59.416" endtime="20200701 13:06:09.829"></status>
+</kw>
+<status status="PASS" starttime="20200701 13:05:56.803" endtime="20200701 13:06:09.829" critical="yes"></status>
+</test>
+<test id="s1-t3" name="To verify chat, transaction history month and change langugage">
+<kw name="Open App" library="Global Keyword">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>automationName=appium</arg>
+<arg>appLocation=${APP_LOCATION}</arg>
+<arg>bundleId=${BUNDLE_ID}</arg>
+<arg>appActivity=${AppActivity}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:06:09.830" endtime="20200701 13:06:12.449"></status>
+</kw>
+<status status="PASS" starttime="20200701 13:06:09.830" endtime="20200701 13:06:12.449"></status>
+</kw>
+<kw name="Login" library="Login">
+<arguments>
+<arg>${Mobile}</arg>
+</arguments>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>WAIT UNTIL ELEMENT IS VISIBLE</arg>
+<arg>${Enterpasscodetext}</arg>
+<arg>10S</arg>
+</arguments>
+<assign>
+<var>${status1}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${Enterpasscodetext}</arg>
+<arg>10S</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20200701 13:06:22.783" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-4.png"&gt;&lt;img src="appium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200701 13:06:22.678" endtime="20200701 13:06:22.783"></status>
+</kw>
+<msg timestamp="20200701 13:06:22.783" level="FAIL">Element locator '//XCUIElementTypeStaticText[@value="ENTER PASSCODE"]' did not match any elements after 10 seconds</msg>
+<status status="FAIL" starttime="20200701 13:06:12.451" endtime="20200701 13:06:22.784"></status>
+</kw>
+<msg timestamp="20200701 13:06:22.784" level="INFO">${status1} = False</msg>
+<status status="PASS" starttime="20200701 13:06:12.451" endtime="20200701 13:06:22.784"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${status1}</arg>
+<arg>sleep</arg>
+<arg>3s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:06:22.784" endtime="20200701 13:06:22.784"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${status1}</arg>
+<arg>Tap</arg>
+<arg>${backbtnonpasspage}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:06:22.784" endtime="20200701 13:06:22.785"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${Signinbtn}</arg>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:06:22.785" endtime="20200701 13:06:23.051"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${Signinbtn}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:06:23.051" endtime="20200701 13:06:23.492"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${mobilefield}</arg>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:06:23.492" endtime="20200701 13:06:23.907"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${mobilefield}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:06:23.908" endtime="20200701 13:06:24.611"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${mobilefield}</arg>
+<arg>${Mobile}</arg>
+</arguments>
+<msg timestamp="20200701 13:06:24.621" level="INFO">Typing text '094094094' into text field '//*[contains(@value, 'Enter your mobile no.')]'</msg>
+<status status="PASS" starttime="20200701 13:06:24.611" endtime="20200701 13:06:25.296"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${loginbutton}</arg>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:06:25.297" endtime="20200701 13:06:25.608"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${loginbutton}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:06:25.608" endtime="20200701 13:06:26.108"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20200701 13:06:28.109" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20200701 13:06:26.108" endtime="20200701 13:06:28.109"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>WAIT UNTIL ELEMENT IS VISIBLE</arg>
+<arg>${LocateOTPPrefix}</arg>
+<arg>10s</arg>
+</arguments>
+<assign>
+<var>${statusOTP}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${LocateOTPPrefix}</arg>
+<arg>10s</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20200701 13:06:38.222" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-5.png"&gt;&lt;img src="appium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200701 13:06:38.153" endtime="20200701 13:06:38.222"></status>
+</kw>
+<msg timestamp="20200701 13:06:38.223" level="FAIL">Element locator 'id=prefix_otp_label' did not match any elements after 10 seconds</msg>
+<status status="FAIL" starttime="20200701 13:06:28.110" endtime="20200701 13:06:38.223"></status>
+</kw>
+<msg timestamp="20200701 13:06:38.223" level="INFO">${statusOTP} = False</msg>
+<status status="PASS" starttime="20200701 13:06:28.109" endtime="20200701 13:06:38.224"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${statusOTP}</arg>
+<arg>sleep</arg>
+<arg>3s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:06:38.224" endtime="20200701 13:06:38.224"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${statusOTP}</arg>
+<arg>Enter OTP</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:06:38.224" endtime="20200701 13:06:38.224"></status>
+</kw>
+<kw name="Enter Passcode" library="Global Keyword">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>id=title_label</arg>
+<arg>20s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:06:38.225" endtime="20200701 13:06:38.410"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="1"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:06:38.410" endtime="20200701 13:06:38.910"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="1"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:06:38.911" endtime="20200701 13:06:39.414"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="1"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:06:39.415" endtime="20200701 13:06:39.915"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="1"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:06:39.915" endtime="20200701 13:06:40.415"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="1"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:06:40.416" endtime="20200701 13:06:40.921"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="1"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:06:40.922" endtime="20200701 13:06:41.435"></status>
+</kw>
+<status status="PASS" starttime="20200701 13:06:38.225" endtime="20200701 13:06:41.435"></status>
+</kw>
+<kw name="Allow Permission" library="Global Keyword">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Element Is Visible</arg>
+<arg>id=loading_actInd</arg>
+<arg>10s</arg>
+</arguments>
+<assign>
+<var>${status0}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>id=loading_actInd</arg>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:06:41.436" endtime="20200701 13:06:41.657"></status>
+</kw>
+<msg timestamp="20200701 13:06:41.658" level="INFO">${status0} = True</msg>
+<status status="PASS" starttime="20200701 13:06:41.436" endtime="20200701 13:06:41.658"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${status0}"=="True"</arg>
+<arg>Wait Until Page Does Not Contain Element</arg>
+<arg>id=loading_actInd</arg>
+<arg>10s</arg>
+</arguments>
+<kw name="Wait Until Page Does Not Contain Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` disappears from current page.</doc>
+<arguments>
+<arg>id=loading_actInd</arg>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:06:41.658" endtime="20200701 13:06:44.125"></status>
+</kw>
+<status status="PASS" starttime="20200701 13:06:41.658" endtime="20200701 13:06:44.126"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Element Is Visible</arg>
+<arg>xpath=//XCUIElementTypeButton[@name="Don’t Allow"]</arg>
+<arg>10s</arg>
+</arguments>
+<assign>
+<var>${status1}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=//XCUIElementTypeButton[@name="Don’t Allow"]</arg>
+<arg>10s</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20200701 13:06:54.593" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-6.png"&gt;&lt;img src="appium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200701 13:06:54.478" endtime="20200701 13:06:54.593"></status>
+</kw>
+<msg timestamp="20200701 13:06:54.593" level="FAIL">Element locator 'xpath=//XCUIElementTypeButton[@name="Don’t Allow"]' did not match any elements after 10 seconds</msg>
+<status status="FAIL" starttime="20200701 13:06:44.127" endtime="20200701 13:06:54.594"></status>
+</kw>
+<msg timestamp="20200701 13:06:54.594" level="INFO">${status1} = False</msg>
+<status status="PASS" starttime="20200701 13:06:44.126" endtime="20200701 13:06:54.594"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${status1}"=="True"</arg>
+<arg>Tap</arg>
+<arg>xpath=//XCUIElementTypeButton[@name="Don’t Allow"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:06:54.594" endtime="20200701 13:06:54.594"></status>
+</kw>
+<status status="PASS" starttime="20200701 13:06:41.435" endtime="20200701 13:06:54.594"></status>
+</kw>
+<status status="PASS" starttime="20200701 13:06:12.450" endtime="20200701 13:06:54.594"></status>
+</kw>
+<kw name="Check the top three transaction month" library="Homepage">
+<kw name="Scroll Down" library="AppiumLibrary">
+<doc>Scrolls down to element</doc>
+<arguments>
+<arg>${Check_Your_Transaction_Here}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:06:54.595" endtime="20200701 13:06:58.127"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${transactionmonth}</arg>
+<arg>5s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:06:58.127" endtime="20200701 13:06:58.760"></status>
+</kw>
+<kw name="Get Text" library="AppiumLibrary">
+<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
+<arguments>
+<arg>${transactionmonth}</arg>
+</arguments>
+<assign>
+<var>${topmonth}</var>
+</assign>
+<msg timestamp="20200701 13:06:59.404" level="INFO">Element '//XCUIElementTypeStaticText[@name="date_header_label"]' text is 'Jul 2020' </msg>
+<msg timestamp="20200701 13:06:59.404" level="INFO">${topmonth} = Jul 2020</msg>
+<status status="PASS" starttime="20200701 13:06:58.760" endtime="20200701 13:06:59.404"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${topmonth}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:06:59.404" endtime="20200701 13:06:59.404"></status>
+</kw>
+<status status="PASS" starttime="20200701 13:06:54.595" endtime="20200701 13:06:59.405"></status>
+</kw>
+<kw name="Change the app language from EN to MM" library="Change Passcode">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${Hamburgerbtn}</arg>
+<arg>15s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:06:59.405" endtime="20200701 13:07:00.047"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${Hamburgerbtn}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:07:00.047" endtime="20200701 13:07:00.840"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${addmoneymenu}</arg>
+<arg>5s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:07:00.840" endtime="20200701 13:07:01.635"></status>
+</kw>
+<kw name="Scroll" library="AppiumLibrary">
+<doc>Scrolls from one element to another
+Key attributes for arbitrary elements are `id` and `name`. See
+`introduction` for details about locating elements.</doc>
+<arguments>
+<arg>${addmoneymenu}</arg>
+<arg>${giftmenu}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:07:01.635" endtime="20200701 13:07:03.534"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${settingbutton}</arg>
+<arg>5s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:07:03.535" endtime="20200701 13:07:04.250"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${settingbutton}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:07:04.251" endtime="20200701 13:07:05.103"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${changelanguage}</arg>
+<arg>5s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:07:05.104" endtime="20200701 13:07:05.994"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${changelanguage}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:07:05.994" endtime="20200701 13:07:06.370"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${langselectMM}</arg>
+<arg>5s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:07:06.371" endtime="20200701 13:07:06.902"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${langselectMM}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:07:06.902" endtime="20200701 13:07:07.455"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${confirmpopup}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:07:07.455" endtime="20200701 13:07:07.989"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${Hamburgerbtn}</arg>
+<arg>15s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:07:07.990" endtime="20200701 13:07:08.999"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${Hamburgerbtn}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:07:08.999" endtime="20200701 13:07:09.733"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${addmoneymenu}</arg>
+<arg>5s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:07:09.734" endtime="20200701 13:07:10.497"></status>
+</kw>
+<kw name="Scroll" library="AppiumLibrary">
+<doc>Scrolls from one element to another
+Key attributes for arbitrary elements are `id` and `name`. See
+`introduction` for details about locating elements.</doc>
+<arguments>
+<arg>${addmoneymenu}</arg>
+<arg>${giftmenu}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:07:10.497" endtime="20200701 13:07:12.402"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${settingbutton}</arg>
+<arg>5s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:07:12.403" endtime="20200701 13:07:13.123"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${settingbutton}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:07:13.123" endtime="20200701 13:07:13.990"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${changelanguage}</arg>
+<arg>5s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:07:13.991" endtime="20200701 13:07:14.882"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${changelanguage}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:07:14.882" endtime="20200701 13:07:15.257"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${langselectEN}</arg>
+<arg>5s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:07:15.257" endtime="20200701 13:07:15.770"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${langselectEN}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:07:15.771" endtime="20200701 13:07:16.219"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${confirmpopup}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:07:16.219" endtime="20200701 13:07:16.759"></status>
+</kw>
+<status status="PASS" starttime="20200701 13:06:59.405" endtime="20200701 13:07:16.759"></status>
+</kw>
+<kw name="Verify the chat menu on home page" library="Homepage">
+<kw name="Scroll Down" library="AppiumLibrary">
+<doc>Scrolls down to element</doc>
+<arguments>
+<arg>${Check_Your_Transaction_Here}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20200701 13:07:17.147" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-7.png"&gt;&lt;img src="appium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200701 13:07:16.861" endtime="20200701 13:07:17.147"></status>
+</kw>
+<msg timestamp="20200701 13:07:17.149" level="FAIL">ValueError: Element locator 'xpath=//XCUIElementTypeScrollView[@name="main_scroll_view"]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[3]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeButton' did not match any elements.</msg>
+<status status="FAIL" starttime="20200701 13:07:16.761" endtime="20200701 13:07:17.149"></status>
+</kw>
+<status status="FAIL" starttime="20200701 13:07:16.760" endtime="20200701 13:07:17.149"></status>
+</kw>
+<status status="FAIL" starttime="20200701 13:06:09.829" endtime="20200701 13:07:17.149" critical="yes">ValueError: Element locator 'xpath=//XCUIElementTypeScrollView[@name="main_scroll_view"]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[3]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeButton' did not match any elements.</status>
+</test>
+<test id="s1-t4" name="To verify MESC and MCDC bills menu for invalid invoice number">
+<kw name="Open App" library="Global Keyword">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>automationName=appium</arg>
+<arg>appLocation=${APP_LOCATION}</arg>
+<arg>bundleId=${BUNDLE_ID}</arg>
+<arg>appActivity=${AppActivity}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:07:17.151" endtime="20200701 13:07:20.027"></status>
+</kw>
+<status status="PASS" starttime="20200701 13:07:17.151" endtime="20200701 13:07:20.027"></status>
+</kw>
+<kw name="Login" library="Login">
+<arguments>
+<arg>${Mobile}</arg>
+</arguments>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>WAIT UNTIL ELEMENT IS VISIBLE</arg>
+<arg>${Enterpasscodetext}</arg>
+<arg>10S</arg>
+</arguments>
+<assign>
+<var>${status1}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${Enterpasscodetext}</arg>
+<arg>10S</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:07:20.028" endtime="20200701 13:07:22.018"></status>
+</kw>
+<msg timestamp="20200701 13:07:22.018" level="INFO">${status1} = True</msg>
+<status status="PASS" starttime="20200701 13:07:20.028" endtime="20200701 13:07:22.018"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${status1}</arg>
+<arg>sleep</arg>
+<arg>3s</arg>
+</arguments>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20200701 13:07:25.019" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20200701 13:07:22.018" endtime="20200701 13:07:25.020"></status>
+</kw>
+<status status="PASS" starttime="20200701 13:07:22.018" endtime="20200701 13:07:25.020"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${status1}</arg>
+<arg>Tap</arg>
+<arg>${backbtnonpasspage}</arg>
+</arguments>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${backbtnonpasspage}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:07:25.020" endtime="20200701 13:07:25.457"></status>
+</kw>
+<status status="PASS" starttime="20200701 13:07:25.020" endtime="20200701 13:07:25.457"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${Signinbtn}</arg>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:07:25.457" endtime="20200701 13:07:26.090"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${Signinbtn}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:07:26.091" endtime="20200701 13:07:26.503"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${mobilefield}</arg>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:07:26.503" endtime="20200701 13:07:27.007"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${mobilefield}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:07:27.008" endtime="20200701 13:07:27.559"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${mobilefield}</arg>
+<arg>${Mobile}</arg>
+</arguments>
+<msg timestamp="20200701 13:07:27.568" level="INFO">Typing text '094094094' into text field '//*[contains(@value, 'Enter your mobile no.')]'</msg>
+<status status="PASS" starttime="20200701 13:07:27.559" endtime="20200701 13:07:28.192"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${loginbutton}</arg>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:07:28.192" endtime="20200701 13:07:28.519"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${loginbutton}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:07:28.519" endtime="20200701 13:07:29.031"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20200701 13:07:31.032" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20200701 13:07:29.031" endtime="20200701 13:07:31.032"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>WAIT UNTIL ELEMENT IS VISIBLE</arg>
+<arg>${LocateOTPPrefix}</arg>
+<arg>10s</arg>
+</arguments>
+<assign>
+<var>${statusOTP}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${LocateOTPPrefix}</arg>
+<arg>10s</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20200701 13:07:41.172" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-8.png"&gt;&lt;img src="appium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200701 13:07:41.102" endtime="20200701 13:07:41.172"></status>
+</kw>
+<msg timestamp="20200701 13:07:41.172" level="FAIL">Element locator 'id=prefix_otp_label' did not match any elements after 10 seconds</msg>
+<status status="FAIL" starttime="20200701 13:07:31.033" endtime="20200701 13:07:41.172"></status>
+</kw>
+<msg timestamp="20200701 13:07:41.172" level="INFO">${statusOTP} = False</msg>
+<status status="PASS" starttime="20200701 13:07:31.033" endtime="20200701 13:07:41.172"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${statusOTP}</arg>
+<arg>sleep</arg>
+<arg>3s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:07:41.173" endtime="20200701 13:07:41.173"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${statusOTP}</arg>
+<arg>Enter OTP</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:07:41.173" endtime="20200701 13:07:41.173"></status>
+</kw>
+<kw name="Enter Passcode" library="Global Keyword">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>id=title_label</arg>
+<arg>20s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:07:41.174" endtime="20200701 13:07:41.360"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="1"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:07:41.360" endtime="20200701 13:07:41.875"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="1"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:07:41.876" endtime="20200701 13:07:42.282"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="1"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:07:42.282" endtime="20200701 13:07:42.719"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="1"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:07:42.720" endtime="20200701 13:07:43.236"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="1"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:07:43.237" endtime="20200701 13:07:43.738"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="1"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:07:43.739" endtime="20200701 13:07:44.242"></status>
+</kw>
+<status status="PASS" starttime="20200701 13:07:41.173" endtime="20200701 13:07:44.243"></status>
+</kw>
+<kw name="Allow Permission" library="Global Keyword">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Element Is Visible</arg>
+<arg>id=loading_actInd</arg>
+<arg>10s</arg>
+</arguments>
+<assign>
+<var>${status0}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>id=loading_actInd</arg>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:07:44.244" endtime="20200701 13:07:44.464"></status>
+</kw>
+<msg timestamp="20200701 13:07:44.464" level="INFO">${status0} = True</msg>
+<status status="PASS" starttime="20200701 13:07:44.243" endtime="20200701 13:07:44.464"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${status0}"=="True"</arg>
+<arg>Wait Until Page Does Not Contain Element</arg>
+<arg>id=loading_actInd</arg>
+<arg>10s</arg>
+</arguments>
+<kw name="Wait Until Page Does Not Contain Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` disappears from current page.</doc>
+<arguments>
+<arg>id=loading_actInd</arg>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:07:44.465" endtime="20200701 13:07:46.352"></status>
+</kw>
+<status status="PASS" starttime="20200701 13:07:44.464" endtime="20200701 13:07:46.352"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Element Is Visible</arg>
+<arg>xpath=//XCUIElementTypeButton[@name="Don’t Allow"]</arg>
+<arg>10s</arg>
+</arguments>
+<assign>
+<var>${status1}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=//XCUIElementTypeButton[@name="Don’t Allow"]</arg>
+<arg>10s</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20200701 13:07:56.571" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-9.png"&gt;&lt;img src="appium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200701 13:07:56.450" endtime="20200701 13:07:56.571"></status>
+</kw>
+<msg timestamp="20200701 13:07:56.571" level="FAIL">Element locator 'xpath=//XCUIElementTypeButton[@name="Don’t Allow"]' did not match any elements after 10 seconds</msg>
+<status status="FAIL" starttime="20200701 13:07:46.353" endtime="20200701 13:07:56.571"></status>
+</kw>
+<msg timestamp="20200701 13:07:56.571" level="INFO">${status1} = False</msg>
+<status status="PASS" starttime="20200701 13:07:46.352" endtime="20200701 13:07:56.572"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${status1}"=="True"</arg>
+<arg>Tap</arg>
+<arg>xpath=//XCUIElementTypeButton[@name="Don’t Allow"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:07:56.572" endtime="20200701 13:07:56.572"></status>
+</kw>
+<status status="PASS" starttime="20200701 13:07:44.243" endtime="20200701 13:07:56.572"></status>
+</kw>
+<status status="PASS" starttime="20200701 13:07:20.027" endtime="20200701 13:07:56.572"></status>
+</kw>
+<kw name="Validate MESC and MCDC bills for invalid invoice number" library="Bills">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${homebills}</arg>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:07:56.573" endtime="20200701 13:07:57.202"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${homebills}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:07:57.202" endtime="20200701 13:07:57.989"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${MCDCbill}</arg>
+<arg>5s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:07:57.990" endtime="20200701 13:07:59.342"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${MCDCbill}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:07:59.342" endtime="20200701 13:08:00.149"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${MCDCinvoicefield}</arg>
+<arg>5s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:08:00.150" endtime="20200701 13:08:00.935"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${MCDCinvoicefield}</arg>
+<arg>123456789987654321</arg>
+</arguments>
+<msg timestamp="20200701 13:08:00.944" level="INFO">Typing text '123456789987654321' into text field '//XCUIElementTypeTextField[@name="invoice_textfield"]'</msg>
+<status status="PASS" starttime="20200701 13:08:00.935" endtime="20200701 13:08:04.035"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${keyboarddone}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:08:04.035" endtime="20200701 13:08:04.927"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${billsconfirm}</arg>
+<arg>5s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:08:04.927" endtime="20200701 13:08:05.878"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${billsconfirm}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:08:05.878" endtime="20200701 13:08:06.698"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${billserrormsg}</arg>
+<arg>40s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:08:06.699" endtime="20200701 13:08:21.762"></status>
+</kw>
+<kw name="Get Text" library="AppiumLibrary">
+<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
+<arguments>
+<arg>${billserrormsg}</arg>
+</arguments>
+<assign>
+<var>${getbillserror}</var>
+</assign>
+<msg timestamp="20200701 13:08:22.453" level="INFO">Element '//XCUIElementTypeStaticText[@name="description_label"]' text is 'Invalid Invoice Number' </msg>
+<msg timestamp="20200701 13:08:22.453" level="INFO">${getbillserror} = Invalid Invoice Number</msg>
+<status status="PASS" starttime="20200701 13:08:21.762" endtime="20200701 13:08:22.453"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>should be equal</arg>
+<arg>${getbillserror}</arg>
+<arg>${actbillserror}</arg>
+</arguments>
+<assign>
+<var>${check}</var>
+</assign>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${getbillserror}</arg>
+<arg>${actbillserror}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:08:22.454" endtime="20200701 13:08:22.454"></status>
+</kw>
+<msg timestamp="20200701 13:08:22.454" level="INFO">${check} = True</msg>
+<status status="PASS" starttime="20200701 13:08:22.453" endtime="20200701 13:08:22.454"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${check}</arg>
+<arg>log to console</arg>
+<arg>Incorrect invoice number</arg>
+</arguments>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Incorrect invoice number</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:08:22.455" endtime="20200701 13:08:22.455"></status>
+</kw>
+<status status="PASS" starttime="20200701 13:08:22.454" endtime="20200701 13:08:22.455"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${billspopupok}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:08:22.455" endtime="20200701 13:08:23.206"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${MCDCinvoicefield}</arg>
+<arg>5s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:08:23.207" endtime="20200701 13:08:23.887"></status>
+</kw>
+<kw name="Clear Text" library="AppiumLibrary">
+<doc>Clears the text field identified by `locator`.</doc>
+<arguments>
+<arg>${MCDCinvoicefield}</arg>
+</arguments>
+<msg timestamp="20200701 13:08:23.898" level="INFO">Clear text field '//XCUIElementTypeTextField[@name="invoice_textfield"]'</msg>
+<status status="PASS" starttime="20200701 13:08:23.887" endtime="20200701 13:08:27.397"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${MCDCinvoicefield}</arg>
+<arg>082019040001020687</arg>
+</arguments>
+<msg timestamp="20200701 13:08:27.407" level="INFO">Typing text '082019040001020687' into text field '//XCUIElementTypeTextField[@name="invoice_textfield"]'</msg>
+<status status="PASS" starttime="20200701 13:08:27.398" endtime="20200701 13:08:28.970"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${keyboarddone}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:08:28.970" endtime="20200701 13:08:29.952"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${billsconfirm}</arg>
+<arg>5s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:08:29.952" endtime="20200701 13:08:33.279"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${billsconfirm}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:08:33.279" endtime="20200701 13:08:34.095"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${Abillserrormsg}</arg>
+<arg>40s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:08:34.095" endtime="20200701 13:08:35.300"></status>
+</kw>
+<kw name="Get Text" library="AppiumLibrary">
+<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
+<arguments>
+<arg>${Abillserrormsg}</arg>
+</arguments>
+<assign>
+<var>${getbillserror}</var>
+</assign>
+<msg timestamp="20200701 13:08:36.005" level="INFO">Element '//XCUIElementTypeStaticText[@name="description_label"]' text is 'Already Paid.' </msg>
+<msg timestamp="20200701 13:08:36.005" level="INFO">${getbillserror} = Already Paid.</msg>
+<status status="PASS" starttime="20200701 13:08:35.300" endtime="20200701 13:08:36.005"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>should be equal</arg>
+<arg>${getbillserror}</arg>
+<arg>${actAbillserror}</arg>
+</arguments>
+<assign>
+<var>${check1}</var>
+</assign>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${getbillserror}</arg>
+<arg>${actAbillserror}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:08:36.005" endtime="20200701 13:08:36.006"></status>
+</kw>
+<msg timestamp="20200701 13:08:36.006" level="INFO">${check1} = True</msg>
+<status status="PASS" starttime="20200701 13:08:36.005" endtime="20200701 13:08:36.006"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${check1}</arg>
+<arg>log to console</arg>
+<arg>Already paid invoice number</arg>
+</arguments>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Already paid invoice number</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:08:36.006" endtime="20200701 13:08:36.006"></status>
+</kw>
+<status status="PASS" starttime="20200701 13:08:36.006" endtime="20200701 13:08:36.006"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${billspopupok}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:08:36.007" endtime="20200701 13:08:36.853"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${MCDCinvoicefield}</arg>
+<arg>5s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:08:36.853" endtime="20200701 13:08:37.535"></status>
+</kw>
+<kw name="Clear Text" library="AppiumLibrary">
+<doc>Clears the text field identified by `locator`.</doc>
+<arguments>
+<arg>${MCDCinvoicefield}</arg>
+</arguments>
+<msg timestamp="20200701 13:08:37.544" level="INFO">Clear text field '//XCUIElementTypeTextField[@name="invoice_textfield"]'</msg>
+<status status="PASS" starttime="20200701 13:08:37.535" endtime="20200701 13:08:40.998"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${MCDCinvoicefield}</arg>
+<arg>123456789</arg>
+</arguments>
+<msg timestamp="20200701 13:08:41.007" level="INFO">Typing text '123456789' into text field '//XCUIElementTypeTextField[@name="invoice_textfield"]'</msg>
+<status status="PASS" starttime="20200701 13:08:40.998" endtime="20200701 13:08:42.370"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${keyboarddone}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:08:42.370" endtime="20200701 13:08:43.260"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>element should be disabled</arg>
+<arg>${billsconfirm}</arg>
+<arg>5s</arg>
+</arguments>
+<assign>
+<var>${check2}</var>
+</assign>
+<kw name="Element Should Be Disabled" library="AppiumLibrary">
+<doc>Verifies that element identified with locator is disabled.</doc>
+<arguments>
+<arg>${billsconfirm}</arg>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20200701 13:08:44.232" level="INFO">Element '//XCUIElementTypeButton[@name="next_button"]' is disabled .</msg>
+<status status="PASS" starttime="20200701 13:08:43.261" endtime="20200701 13:08:44.233"></status>
+</kw>
+<msg timestamp="20200701 13:08:44.233" level="INFO">${check2} = True</msg>
+<status status="PASS" starttime="20200701 13:08:43.261" endtime="20200701 13:08:44.233"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${check2}</arg>
+<arg>log to console</arg>
+<arg>Invoice number should be 18 digits</arg>
+</arguments>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Invoice number should be 18 digits</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:08:44.234" endtime="20200701 13:08:44.234"></status>
+</kw>
+<status status="PASS" starttime="20200701 13:08:44.233" endtime="20200701 13:08:44.234"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${billsbackbtn}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:08:44.234" endtime="20200701 13:08:45.244"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20200701 13:08:48.246" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20200701 13:08:45.244" endtime="20200701 13:08:48.246"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${MESCbill}</arg>
+<arg>5s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:08:48.247" endtime="20200701 13:08:48.949"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${MESCbill}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:08:48.949" endtime="20200701 13:08:49.766"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${mandalaydist}</arg>
+<arg>5s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:08:49.766" endtime="20200701 13:08:51.326"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${mandalaydist}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:08:51.327" endtime="20200701 13:08:52.294"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${paythicity}</arg>
+<arg>5s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:08:52.294" endtime="20200701 13:08:53.238"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${paythicity}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:08:53.238" endtime="20200701 13:08:54.194"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${MESCinvoicefield}</arg>
+<arg>5s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:08:54.194" endtime="20200701 13:08:55.186"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${MESCinvoicefield}</arg>
+<arg>0123456789</arg>
+</arguments>
+<msg timestamp="20200701 13:08:55.195" level="INFO">Typing text '0123456789' into text field '//XCUIElementTypeTextField[@name="code_textfield"]'</msg>
+<status status="PASS" starttime="20200701 13:08:55.186" endtime="20200701 13:08:58.564"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${keyboarddone}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:08:58.565" endtime="20200701 13:08:59.876"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${billsconfirm}</arg>
+<arg>5s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:08:59.877" endtime="20200701 13:09:03.680"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${billsconfirm}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:09:03.681" endtime="20200701 13:09:04.772"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${MESCerrormsg}</arg>
+<arg>40s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:09:04.772" endtime="20200701 13:09:14.013"></status>
+</kw>
+<kw name="Get Text" library="AppiumLibrary">
+<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
+<arguments>
+<arg>${MESCerrormsg}</arg>
+</arguments>
+<assign>
+<var>${getMESCerrormsg}</var>
+</assign>
+<msg timestamp="20200701 13:09:14.992" level="INFO">Element '//XCUIElementTypeStaticText[@name="description_label"]' text is 'Invalid Meter Bill' </msg>
+<msg timestamp="20200701 13:09:14.992" level="INFO">${getMESCerrormsg} = Invalid Meter Bill</msg>
+<status status="PASS" starttime="20200701 13:09:14.013" endtime="20200701 13:09:14.992"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>should be equal</arg>
+<arg>${getMESCerrormsg}</arg>
+<arg>${actMESCerror}</arg>
+</arguments>
+<assign>
+<var>${check3}</var>
+</assign>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${getMESCerrormsg}</arg>
+<arg>${actMESCerror}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:09:14.993" endtime="20200701 13:09:14.993"></status>
+</kw>
+<msg timestamp="20200701 13:09:14.993" level="INFO">${check3} = True</msg>
+<status status="PASS" starttime="20200701 13:09:14.992" endtime="20200701 13:09:14.993"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${check3}</arg>
+<arg>log to console</arg>
+<arg>invalid MESC invoice number</arg>
+</arguments>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>invalid MESC invoice number</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:09:14.994" endtime="20200701 13:09:14.994"></status>
+</kw>
+<status status="PASS" starttime="20200701 13:09:14.993" endtime="20200701 13:09:14.994"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${billspopupok}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:09:14.994" endtime="20200701 13:09:16.086"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${MESCcrossbtn}</arg>
+<arg>5s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:09:16.086" endtime="20200701 13:09:17.066"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${MESCcrossbtn}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:09:17.066" endtime="20200701 13:09:18.176"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20200701 13:09:23.177" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20200701 13:09:18.176" endtime="20200701 13:09:23.177"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${tapother}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:09:23.178" endtime="20200701 13:09:23.996"></status>
+</kw>
+<status status="PASS" starttime="20200701 13:07:56.573" endtime="20200701 13:09:23.997"></status>
+</kw>
+<status status="PASS" starttime="20200701 13:07:17.150" endtime="20200701 13:09:23.997" critical="yes"></status>
+</test>
+<test id="s1-t5" name="To assert the UI balance with GIP API response">
+<kw name="Open App" library="Global Keyword">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>automationName=appium</arg>
+<arg>appLocation=${APP_LOCATION}</arg>
+<arg>bundleId=${BUNDLE_ID}</arg>
+<arg>appActivity=${AppActivity}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:09:23.998" endtime="20200701 13:09:26.822"></status>
+</kw>
+<status status="PASS" starttime="20200701 13:09:23.998" endtime="20200701 13:09:26.822"></status>
+</kw>
+<kw name="Login" library="Login">
+<arguments>
+<arg>${Mobile}</arg>
+</arguments>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>WAIT UNTIL ELEMENT IS VISIBLE</arg>
+<arg>${Enterpasscodetext}</arg>
+<arg>10S</arg>
+</arguments>
+<assign>
+<var>${status1}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${Enterpasscodetext}</arg>
+<arg>10S</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:09:26.823" endtime="20200701 13:09:29.468"></status>
+</kw>
+<msg timestamp="20200701 13:09:29.468" level="INFO">${status1} = True</msg>
+<status status="PASS" starttime="20200701 13:09:26.823" endtime="20200701 13:09:29.468"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${status1}</arg>
+<arg>sleep</arg>
+<arg>3s</arg>
+</arguments>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20200701 13:09:32.473" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20200701 13:09:29.469" endtime="20200701 13:09:32.473"></status>
+</kw>
+<status status="PASS" starttime="20200701 13:09:29.468" endtime="20200701 13:09:32.473"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${status1}</arg>
+<arg>Tap</arg>
+<arg>${backbtnonpasspage}</arg>
+</arguments>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${backbtnonpasspage}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:09:32.474" endtime="20200701 13:09:32.986"></status>
+</kw>
+<status status="PASS" starttime="20200701 13:09:32.474" endtime="20200701 13:09:32.986"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${Signinbtn}</arg>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:09:32.986" endtime="20200701 13:09:33.544"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${Signinbtn}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:09:33.544" endtime="20200701 13:09:33.964"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${mobilefield}</arg>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:09:33.964" endtime="20200701 13:09:34.371"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${mobilefield}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:09:34.371" endtime="20200701 13:09:34.973"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${mobilefield}</arg>
+<arg>${Mobile}</arg>
+</arguments>
+<msg timestamp="20200701 13:09:34.984" level="INFO">Typing text '094094094' into text field '//*[contains(@value, 'Enter your mobile no.')]'</msg>
+<status status="PASS" starttime="20200701 13:09:34.974" endtime="20200701 13:09:35.625"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${loginbutton}</arg>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:09:35.625" endtime="20200701 13:09:35.938"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>${loginbutton}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:09:35.939" endtime="20200701 13:09:36.354"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20200701 13:09:38.356" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20200701 13:09:36.354" endtime="20200701 13:09:38.356"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>WAIT UNTIL ELEMENT IS VISIBLE</arg>
+<arg>${LocateOTPPrefix}</arg>
+<arg>10s</arg>
+</arguments>
+<assign>
+<var>${statusOTP}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${LocateOTPPrefix}</arg>
+<arg>10s</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20200701 13:09:48.528" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-10.png"&gt;&lt;img src="appium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200701 13:09:48.461" endtime="20200701 13:09:48.528"></status>
+</kw>
+<msg timestamp="20200701 13:09:48.528" level="FAIL">Element locator 'id=prefix_otp_label' did not match any elements after 10 seconds</msg>
+<status status="FAIL" starttime="20200701 13:09:38.357" endtime="20200701 13:09:48.528"></status>
+</kw>
+<msg timestamp="20200701 13:09:48.529" level="INFO">${statusOTP} = False</msg>
+<status status="PASS" starttime="20200701 13:09:38.357" endtime="20200701 13:09:48.529"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${statusOTP}</arg>
+<arg>sleep</arg>
+<arg>3s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:09:48.529" endtime="20200701 13:09:48.529"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${statusOTP}</arg>
+<arg>Enter OTP</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:09:48.529" endtime="20200701 13:09:48.529"></status>
+</kw>
+<kw name="Enter Passcode" library="Global Keyword">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>id=title_label</arg>
+<arg>20s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:09:48.530" endtime="20200701 13:09:48.713"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="1"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:09:48.713" endtime="20200701 13:09:49.229"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="1"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:09:49.230" endtime="20200701 13:09:49.756"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="1"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:09:49.756" endtime="20200701 13:09:50.168"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="1"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:09:50.168" endtime="20200701 13:09:50.576"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="1"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:09:50.576" endtime="20200701 13:09:51.086"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>//XCUIElementTypeKey[@name="1"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:09:51.086" endtime="20200701 13:09:51.495"></status>
+</kw>
+<status status="PASS" starttime="20200701 13:09:48.530" endtime="20200701 13:09:51.495"></status>
+</kw>
+<kw name="Allow Permission" library="Global Keyword">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Element Is Visible</arg>
+<arg>id=loading_actInd</arg>
+<arg>10s</arg>
+</arguments>
+<assign>
+<var>${status0}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>id=loading_actInd</arg>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:09:51.496" endtime="20200701 13:09:51.725"></status>
+</kw>
+<msg timestamp="20200701 13:09:51.725" level="INFO">${status0} = True</msg>
+<status status="PASS" starttime="20200701 13:09:51.496" endtime="20200701 13:09:51.725"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${status0}"=="True"</arg>
+<arg>Wait Until Page Does Not Contain Element</arg>
+<arg>id=loading_actInd</arg>
+<arg>10s</arg>
+</arguments>
+<kw name="Wait Until Page Does Not Contain Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` disappears from current page.</doc>
+<arguments>
+<arg>id=loading_actInd</arg>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:09:51.726" endtime="20200701 13:09:53.815"></status>
+</kw>
+<status status="PASS" starttime="20200701 13:09:51.725" endtime="20200701 13:09:53.815"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Element Is Visible</arg>
+<arg>xpath=//XCUIElementTypeButton[@name="Don’t Allow"]</arg>
+<arg>10s</arg>
+</arguments>
+<assign>
+<var>${status1}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=//XCUIElementTypeButton[@name="Don’t Allow"]</arg>
+<arg>10s</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20200701 13:10:04.057" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-11.png"&gt;&lt;img src="appium-screenshot-11.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200701 13:10:03.941" endtime="20200701 13:10:04.058"></status>
+</kw>
+<msg timestamp="20200701 13:10:04.058" level="FAIL">Element locator 'xpath=//XCUIElementTypeButton[@name="Don’t Allow"]' did not match any elements after 10 seconds</msg>
+<status status="FAIL" starttime="20200701 13:09:53.816" endtime="20200701 13:10:04.058"></status>
+</kw>
+<msg timestamp="20200701 13:10:04.058" level="INFO">${status1} = False</msg>
+<status status="PASS" starttime="20200701 13:09:53.815" endtime="20200701 13:10:04.058"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${status1}"=="True"</arg>
+<arg>Tap</arg>
+<arg>xpath=//XCUIElementTypeButton[@name="Don’t Allow"]</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:10:04.058" endtime="20200701 13:10:04.059"></status>
+</kw>
+<status status="PASS" starttime="20200701 13:09:51.495" endtime="20200701 13:10:04.059"></status>
+</kw>
+<status status="PASS" starttime="20200701 13:09:26.823" endtime="20200701 13:10:04.059"></status>
+</kw>
+<kw name="Get the wallet balance from UI" library="Homepage">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${homebalance}</arg>
+<arg>5s</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:10:04.060" endtime="20200701 13:10:04.685"></status>
+</kw>
+<kw name="Get Text" library="AppiumLibrary">
+<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
+<arguments>
+<arg>${homebalance}</arg>
+</arguments>
+<assign>
+<var>${gethomebalance}</var>
+</assign>
+<msg timestamp="20200701 13:10:05.325" level="INFO">Element '//XCUIElementTypeStaticText[@name="amount_balance_label"]' text is 'MMK 406,395' </msg>
+<msg timestamp="20200701 13:10:05.325" level="INFO">${gethomebalance} = MMK 406,395</msg>
+<status status="PASS" starttime="20200701 13:10:04.685" endtime="20200701 13:10:05.325"></status>
+</kw>
+<kw name="Remove String" library="String">
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<arguments>
+<arg>${gethomebalance}</arg>
+<arg>,</arg>
+</arguments>
+<assign>
+<var>${remove}</var>
+</assign>
+<msg timestamp="20200701 13:10:05.326" level="INFO">${remove} = MMK 406395</msg>
+<status status="PASS" starttime="20200701 13:10:05.325" endtime="20200701 13:10:05.326"></status>
+</kw>
+<kw name="Remove String" library="String">
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<arguments>
+<arg>${remove}</arg>
+<arg>MMK</arg>
+</arguments>
+<assign>
+<var>${removemmk}</var>
+</assign>
+<msg timestamp="20200701 13:10:05.326" level="INFO">${removemmk} =  406395</msg>
+<status status="PASS" starttime="20200701 13:10:05.326" endtime="20200701 13:10:05.326"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>'${removemmk}'.replace(' ','')</arg>
+</arguments>
+<assign>
+<var>${remove_space}</var>
+</assign>
+<msg timestamp="20200701 13:10:05.327" level="INFO">${remove_space} = 406395</msg>
+<status status="PASS" starttime="20200701 13:10:05.326" endtime="20200701 13:10:05.327"></status>
+</kw>
+<kw name="Fetch From Left" library="String">
+<doc>Returns contents of the ``string`` before the first occurrence of ``marker``.</doc>
+<arguments>
+<arg>${remove_space}</arg>
+<arg>.</arg>
+</arguments>
+<assign>
+<var>${Wallet_Bal}</var>
+</assign>
+<msg timestamp="20200701 13:10:05.327" level="INFO">${Wallet_Bal} = 406395</msg>
+<status status="PASS" starttime="20200701 13:10:05.327" endtime="20200701 13:10:05.327"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${Wallet_bal}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:10:05.327" endtime="20200701 13:10:05.327"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${Walletbalance}</arg>
+<arg>${Wallet_bal}</arg>
+</arguments>
+<msg timestamp="20200701 13:10:05.328" level="INFO">${Walletbalance} = 406395</msg>
+<status status="PASS" starttime="20200701 13:10:05.328" endtime="20200701 13:10:05.328"></status>
+</kw>
+<status status="PASS" starttime="20200701 13:10:04.059" endtime="20200701 13:10:05.328"></status>
+</kw>
+<kw name="Get Access token for GIP API" library="Homepage">
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>Content-Type=application/x-www-form-urlencoded</arg>
+<arg>Authorization=Basic TVdHOnNZOG45UGxQaTQwWGpHRml5WFNSREo=</arg>
+<arg>Accept=application/json</arg>
+</arguments>
+<assign>
+<var>${headers}</var>
+</assign>
+<msg timestamp="20200701 13:10:05.329" level="INFO">${headers} = {'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': 'Basic TVdHOnNZOG45UGxQaTQwWGpHRml5WFNSREo=', 'Accept': 'application/json'}</msg>
+<status status="PASS" starttime="20200701 13:10:05.329" endtime="20200701 13:10:05.329"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>grant_type=client_credentials</arg>
+</arguments>
+<assign>
+<var>${Data}</var>
+</assign>
+<msg timestamp="20200701 13:10:05.329" level="INFO">${Data} = {'grant_type': 'client_credentials'}</msg>
+<status status="PASS" starttime="20200701 13:10:05.329" endtime="20200701 13:10:05.330"></status>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>GetToken</arg>
+<arg>${Requestfortoken}</arg>
+</arguments>
+<msg timestamp="20200701 13:10:05.330" level="INFO">Creating Session using : alias=GetToken, url=https://uat-oauth.2c2p.com/oauth, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20200701 13:10:05.330" endtime="20200701 13:10:05.330"></status>
+</kw>
+<kw name="Post Request" library="RequestsLibrary">
+<doc>Send a POST request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>GetToken</arg>
+<arg>/token</arg>
+<arg>headers=${headers}</arg>
+<arg>data=${Data}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20200701 13:10:05.867" level="INFO">POST Request : url=https://uat-oauth.2c2p.com/oauth/token 
+ path_url=/oauth/token 
+ headers={'User-Agent': 'python-requests/2.24.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': 'Basic TVdHOnNZOG45UGxQaTQwWGpHRml5WFNSREo=', 'Content-Length': '29'} 
+ body=grant_type=client_credentials 
+ </msg>
+<msg timestamp="20200701 13:10:05.867" level="INFO">POST Response : url=https://uat-oauth.2c2p.com/oauth/token 
+ status=200, reason=OK 
+ body={"access_token":"8JVOw7ffwt6N8kIgTfUuu-BFY707bqqdNqSQSEm13eS-tHk8LPArf33yY3F85o964VvBXYbqxKAfTxQhzEle0tQBlodWDyXRoLoA7QZYtparqXRnsuEI2g6r-Ks4iovBVlj5Bd04bFw9vSE5r-ZKSS4EpjDvSChC2szTJa2KXAWeeT4RutmB-YUKJafIYjX3wecY95kGusDoWvm_iElR1amXNiqoPIBPmKv4eJxpm-aXhDYPVuzoMKLOb8ISab0Ug-ZcLZ3ciczbMbKVu_pdMuvggww","token_type":"bearer","expires_in":1799} 
+ </msg>
+<msg timestamp="20200701 13:10:05.867" level="INFO">/usr/local/lib/python3.7/site-packages/urllib3/connectionpool.py:986: InsecureRequestWarning: Unverified HTTPS request is being made to host 'uat-oauth.2c2p.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,</msg>
+<msg timestamp="20200701 13:10:05.867" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20200701 13:10:05.330" endtime="20200701 13:10:05.867"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${response.json()['access_token']}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:10:05.867" endtime="20200701 13:10:05.868"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${Token}</arg>
+<arg>${response.json()['access_token']}</arg>
+</arguments>
+<msg timestamp="20200701 13:10:05.868" level="INFO">${Token} = 8JVOw7ffwt6N8kIgTfUuu-BFY707bqqdNqSQSEm13eS-tHk8LPArf33yY3F85o964VvBXYbqxKAfTxQhzEle0tQBlodWDyXRoLoA7QZYtparqXRnsuEI2g6r-Ks4iovBVlj5Bd04bFw9vSE5r-ZKSS4EpjDvSChC2szTJa2KXAWeeT4RutmB-YUKJafIYjX3wecY95kG...</msg>
+<status status="PASS" starttime="20200701 13:10:05.868" endtime="20200701 13:10:05.868"></status>
+</kw>
+<status status="PASS" starttime="20200701 13:10:05.328" endtime="20200701 13:10:05.868"></status>
+</kw>
+<kw name="Get the wallet balance from GIP api" library="Homepage">
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>Content-Type=application/json</arg>
+<arg>Authorization=Bearer ${Token}</arg>
+</arguments>
+<assign>
+<var>${headers}</var>
+</assign>
+<msg timestamp="20200701 13:10:05.869" level="INFO">${headers} = {'Content-Type': 'application/json', 'Authorization': 'Bearer 8JVOw7ffwt6N8kIgTfUuu-BFY707bqqdNqSQSEm13eS-tHk8LPArf33yY3F85o964VvBXYbqxKAfTxQhzEle0tQBlodWDyXRoLoA7QZYtparqXRnsuEI2g6r-Ks4iovBVlj5Bd04bF...</msg>
+<status status="PASS" starttime="20200701 13:10:05.869" endtime="20200701 13:10:05.869"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>companyId=008</arg>
+<arg>customerId=30080</arg>
+</arguments>
+<assign>
+<var>${Data}</var>
+</assign>
+<msg timestamp="20200701 13:10:05.870" level="INFO">${Data} = {'companyId': '008', 'customerId': '30080'}</msg>
+<status status="PASS" starttime="20200701 13:10:05.870" endtime="20200701 13:10:05.870"></status>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>GetBalance</arg>
+<arg>${Request}</arg>
+</arguments>
+<msg timestamp="20200701 13:10:05.870" level="INFO">Creating Session using : alias=GetBalance, url=http://172.31.1.147/GIPBackend/api/v1, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20200701 13:10:05.870" endtime="20200701 13:10:05.870"></status>
+</kw>
+<kw name="Post Request" library="RequestsLibrary">
+<doc>Send a POST request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>GetBalance</arg>
+<arg>/wallet</arg>
+<arg>headers=${headers}</arg>
+<arg>data=${Data}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20200701 13:10:06.181" level="INFO">POST Request : url=http://172.31.1.147/GIPBackend/api/v1/wallet 
+ path_url=/GIPBackend/api/v1/wallet 
+ headers={'User-Agent': 'python-requests/2.24.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer 8JVOw7ffwt6N8kIgTfUuu-BFY707bqqdNqSQSEm13eS-tHk8LPArf33yY3F85o964VvBXYbqxKAfTxQhzEle0tQBlodWDyXRoLoA7QZYtparqXRnsuEI2g6r-Ks4iovBVlj5Bd04bFw9vSE5r-ZKSS4EpjDvSChC2szTJa2KXAWeeT4RutmB-YUKJafIYjX3wecY95kGusDoWvm_iElR1amXNiqoPIBPmKv4eJxpm-aXhDYPVuzoMKLOb8ISab0Ug-ZcLZ3ciczbMbKVu_pdMuvggww', 'Content-Length': '43'} 
+ body={"companyId": "008", "customerId": "30080"} 
+ </msg>
+<msg timestamp="20200701 13:10:06.181" level="INFO">POST Response : url=http://172.31.1.147/GIPBackend/api/v1/wallet 
+ status=200, reason=OK 
+ body={"companyId":"008","customerId":30080,"walletData":{"walletUniqueId":28648,"walletId":"240080000002760","walletStatus":"Active","openDate":"2020-03-12 17:29:19","modifiedDate":"2020-06-30 15:22:21","availableBalance":"406395.61","ledgerBalance":"406395.61","currencyCode":"104"},"responseCode":"000","resDescription":"Success"} 
+ </msg>
+<msg timestamp="20200701 13:10:06.181" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20200701 13:10:05.871" endtime="20200701 13:10:06.182"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:10:06.182" endtime="20200701 13:10:06.182"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${response.json()['walletData']['availableBalance']}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:10:06.182" endtime="20200701 13:10:06.183"></status>
+</kw>
+<kw name="Fetch From Left" library="String">
+<doc>Returns contents of the ``string`` before the first occurrence of ``marker``.</doc>
+<arguments>
+<arg>${response.json()['walletData']['availableBalance']}</arg>
+<arg>.</arg>
+</arguments>
+<assign>
+<var>${GIP_Bal}</var>
+</assign>
+<msg timestamp="20200701 13:10:06.183" level="INFO">${GIP_Bal} = 406395</msg>
+<status status="PASS" starttime="20200701 13:10:06.183" endtime="20200701 13:10:06.183"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${GIP_Bal}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:10:06.183" endtime="20200701 13:10:06.183"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${GIP_Bal}</arg>
+<arg>${Walletbalance}</arg>
+</arguments>
+<status status="PASS" starttime="20200701 13:10:06.184" endtime="20200701 13:10:06.184"></status>
+</kw>
+<status status="PASS" starttime="20200701 13:10:05.869" endtime="20200701 13:10:06.184"></status>
+</kw>
+<status status="PASS" starttime="20200701 13:09:23.997" endtime="20200701 13:10:06.184" critical="yes"></status>
+</test>
+<status status="FAIL" starttime="20200701 13:04:07.340" endtime="20200701 13:10:06.185"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="1">Critical Tests</stat>
+<stat pass="4" fail="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="1" id="s1" name="Testtest">Testtest</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20200701 13:04:10.550" level="WARN">Accessing variable items using '@{ChangePassCode}[0]' syntax is deprecated. Use '${ChangePassCode}[0]' instead.</msg>
+<msg timestamp="20200701 13:04:10.550" level="WARN">Accessing variable items using '@{ChangePassCode}[1]' syntax is deprecated. Use '${ChangePassCode}[1]' instead.</msg>
+<msg timestamp="20200701 13:04:48.905" level="WARN">Accessing variable items using '@{queryresult}[4]' syntax is deprecated. Use '${queryresult}[4]' instead.</msg>
+<msg timestamp="20200701 13:04:48.906" level="WARN">Accessing variable items using '@{queryresult}[5]' syntax is deprecated. Use '${queryresult}[5]' instead.</msg>
+<msg timestamp="20200701 13:04:48.907" level="WARN">Accessing variable items using '@{queryresult}[4]' syntax is deprecated. Use '${queryresult}[4]' instead.</msg>
+<msg timestamp="20200701 13:04:48.908" level="WARN">Accessing variable items using '@{queryresult}[5]' syntax is deprecated. Use '${queryresult}[5]' instead.</msg>
+<msg timestamp="20200701 13:04:48.908" level="WARN">Accessing variable items using '@{queryresult}[5]' syntax is deprecated. Use '${queryresult}[5]' instead.</msg>
+<msg timestamp="20200701 13:05:05.199" level="WARN">Accessing variable items using '@{ChangePassCode}[0]' syntax is deprecated. Use '${ChangePassCode}[0]' instead.</msg>
+<msg timestamp="20200701 13:05:20.092" level="WARN">Accessing variable items using '@{ChangePassCode}[0]' syntax is deprecated. Use '${ChangePassCode}[0]' instead.</msg>
+<msg timestamp="20200701 13:05:20.092" level="WARN">Accessing variable items using '@{ChangePassCode}[1]' syntax is deprecated. Use '${ChangePassCode}[1]' instead.</msg>
+<msg timestamp="20200701 13:05:44.610" level="WARN">Accessing variable items using '@{queryresult}[4]' syntax is deprecated. Use '${queryresult}[4]' instead.</msg>
+<msg timestamp="20200701 13:05:44.611" level="WARN">Accessing variable items using '@{queryresult}[5]' syntax is deprecated. Use '${queryresult}[5]' instead.</msg>
+<msg timestamp="20200701 13:05:44.611" level="WARN">Accessing variable items using '@{queryresult}[4]' syntax is deprecated. Use '${queryresult}[4]' instead.</msg>
+<msg timestamp="20200701 13:05:44.612" level="WARN">Accessing variable items using '@{queryresult}[5]' syntax is deprecated. Use '${queryresult}[5]' instead.</msg>
+<msg timestamp="20200701 13:05:44.612" level="WARN">Accessing variable items using '@{queryresult}[5]' syntax is deprecated. Use '${queryresult}[5]' instead.</msg>
+</errors>
+</robot>

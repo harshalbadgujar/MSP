@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.8.1 on win32)" generated="20200625 17:18:56.648" rpa="false">
+<suite id="s1" name="Check Balance" source="E:\Robot framwork\MSP\API's\Check_Balance.robot">
+<test id="s1-t1" name="Fetch Token">
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>Content-Type=application/x-www-form-urlencoded</arg>
+<arg>Authorization=Basic TVdHOnNZOG45UGxQaTQwWGpHRml5WFNSREo=</arg>
+<arg>Accept=application/json</arg>
+</arguments>
+<assign>
+<var>${headers}</var>
+</assign>
+<msg timestamp="20200625 17:18:57.559" level="INFO">${headers} = {'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': 'Basic TVdHOnNZOG45UGxQaTQwWGpHRml5WFNSREo=', 'Accept': 'application/json'}</msg>
+<status status="PASS" starttime="20200625 17:18:57.559" endtime="20200625 17:18:57.559"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>grant_type=client_credentials</arg>
+</arguments>
+<assign>
+<var>${Data}</var>
+</assign>
+<msg timestamp="20200625 17:18:57.560" level="INFO">${Data} = {'grant_type': 'client_credentials'}</msg>
+<status status="PASS" starttime="20200625 17:18:57.560" endtime="20200625 17:18:57.560"></status>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>GetToken</arg>
+<arg>${Requestfortoken}</arg>
+</arguments>
+<msg timestamp="20200625 17:18:57.560" level="INFO">Creating Session using : alias=GetToken, url=https://uat-oauth.2c2p.com/oauth, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20200625 17:18:57.560" endtime="20200625 17:18:57.561"></status>
+</kw>
+<kw name="Post Request" library="RequestsLibrary">
+<doc>Send a POST request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>GetToken</arg>
+<arg>/token</arg>
+<arg>headers=${headers}</arg>
+<arg>data=${Data}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20200625 17:18:57.561" level="INFO">POST Request using : uri=/token, params=None, files=None, allow_redirects=True, timeout=None
+headers={'User-Agent': 'python-requests/2.22.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': 'Basic TVdHOnNZOG45UGxQaTQwWGpHRml5WFNSREo='} 
+data=grant_type=client_credentials 
+json=None</msg>
+<msg timestamp="20200625 17:18:58.254" level="INFO">c:\users\perennial\appdata\local\programs\python\python38\lib\site-packages\urllib3\connectionpool.py:997: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20200625 17:18:58.255" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20200625 17:18:57.561" endtime="20200625 17:18:58.255"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${response.json()['access_token']}</arg>
+</arguments>
+<status status="PASS" starttime="20200625 17:18:58.268" endtime="20200625 17:18:58.270"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${Token}</arg>
+<arg>${response.json()['access_token']}</arg>
+</arguments>
+<msg timestamp="20200625 17:18:58.279" level="INFO">${Token} = 1xRXZuTqMD_VsG_MmquGvAbQ5OdoJ-9nqU-jNljngtpG-gpV8VMxg1Bdi-xEku21Aa06NUFv3TxtCNqsiGWtBOkwnMg12Yo_NWptYgjx2y0HaT_sTNG6v_UbeK3N2Wyu804MBndThSKB810QI75noDmc-OHFajvMaG_P6P_uXgWBLPZsyKQAM6xKr51D_gHNeGSCxlF0...</msg>
+<status status="PASS" starttime="20200625 17:18:58.278" endtime="20200625 17:18:58.279"></status>
+</kw>
+<status status="PASS" starttime="20200625 17:18:57.557" endtime="20200625 17:18:58.280" critical="yes"></status>
+</test>
+<test id="s1-t2" name="GIP Balance API">
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>Content-Type=application/json</arg>
+<arg>Authorization=Bearer ${Token}</arg>
+</arguments>
+<assign>
+<var>${headers}</var>
+</assign>
+<msg timestamp="20200625 17:18:58.286" level="INFO">${headers} = {'Content-Type': 'application/json', 'Authorization': 'Bearer 1xRXZuTqMD_VsG_MmquGvAbQ5OdoJ-9nqU-jNljngtpG-gpV8VMxg1Bdi-xEku21Aa06NUFv3TxtCNqsiGWtBOkwnMg12Yo_NWptYgjx2y0HaT_sTNG6v_UbeK3N2Wyu804MBndThS...</msg>
+<status status="PASS" starttime="20200625 17:18:58.285" endtime="20200625 17:18:58.286"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>companyId=008</arg>
+<arg>customerId=28902</arg>
+</arguments>
+<assign>
+<var>${Data}</var>
+</assign>
+<msg timestamp="20200625 17:18:58.287" level="INFO">${Data} = {'companyId': '008', 'customerId': '28902'}</msg>
+<status status="PASS" starttime="20200625 17:18:58.286" endtime="20200625 17:18:58.287"></status>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>GetBalance</arg>
+<arg>${Request}</arg>
+</arguments>
+<msg timestamp="20200625 17:18:58.288" level="INFO">Creating Session using : alias=GetBalance, url=http://172.31.1.147/GIPBackend/api/v1, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20200625 17:18:58.288" endtime="20200625 17:18:58.289"></status>
+</kw>
+<kw name="Post Request" library="RequestsLibrary">
+<doc>Send a POST request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>GetBalance</arg>
+<arg>/wallet</arg>
+<arg>headers=${headers}</arg>
+<arg>data=${Data}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20200625 17:18:58.292" level="INFO">POST Request using : uri=/wallet, params=None, files=None, allow_redirects=True, timeout=None
+headers={'User-Agent': 'python-requests/2.22.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer 1xRXZuTqMD_VsG_MmquGvAbQ5OdoJ-9nqU-jNljngtpG-gpV8VMxg1Bdi-xEku21Aa06NUFv3TxtCNqsiGWtBOkwnMg12Yo_NWptYgjx2y0HaT_sTNG6v_UbeK3N2Wyu804MBndThSKB810QI75noDmc-OHFajvMaG_P6P_uXgWBLPZsyKQAM6xKr51D_gHNeGSCxlF0NnZyBKfVrIQTjmUMBFz4ArHf7sdKYGCSGB7mkhSoXTKNPG0pqyxJRJa3Vom-0YoLfOlQB94qkmFMv0Vh1-k'} 
+data={"companyId": "008", "customerId": "28902"} 
+json=None</msg>
+<msg timestamp="20200625 17:18:58.581" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20200625 17:18:58.290" endtime="20200625 17:18:58.581"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<status status="PASS" starttime="20200625 17:18:58.583" endtime="20200625 17:18:58.587"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${response.json()['walletData']['availableBalance']}</arg>
+</arguments>
+<status status="PASS" starttime="20200625 17:18:58.589" endtime="20200625 17:18:58.597"></status>
+</kw>
+<kw name="Fetch From Left" library="String">
+<doc>Returns contents of the ``string`` before the first occurrence of ``marker``.</doc>
+<arguments>
+<arg>${response.json()['walletData']['availableBalance']}</arg>
+<arg>.</arg>
+</arguments>
+<assign>
+<var>${Decimal}</var>
+</assign>
+<msg timestamp="20200625 17:18:58.606" level="INFO">${Decimal} = 368709</msg>
+<status status="PASS" starttime="20200625 17:18:58.605" endtime="20200625 17:18:58.606"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${Decimal}</arg>
+</arguments>
+<status status="PASS" starttime="20200625 17:18:58.607" endtime="20200625 17:18:58.608"></status>
+</kw>
+<status status="PASS" starttime="20200625 17:18:58.281" endtime="20200625 17:18:58.610" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20200625 17:18:56.650" endtime="20200625 17:18:58.612"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0">Critical Tests</stat>
+<stat pass="2" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" id="s1" name="Check Balance">Check Balance</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

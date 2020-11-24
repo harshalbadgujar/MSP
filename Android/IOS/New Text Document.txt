@@ -1,0 +1,47 @@
+iOS Script
+Pre requisite
+1) Install Homebrew
+Homebrew is a package management software that will make it much simpler for us to install a few other software.
+
+2) Install Carthage
+Carthage is a dependency manager. In our case, it is required by WebDriverAgent.
+
+3) Install Node & NPM
+Node is a javascript run-time environment and npm is the node package manager. We need these because Appium is a node application.
+
+4) Install JDK and set JAVA_HOME
+As we’ll be writing our tests in Java, we need the Java Development Kit (JDK)
+
+5) Install Xcode and Simulators
+Launch the Mac AppStore and download/install Xcode.
+
+6) Install authorize-ios
+authorize-ios is a little utility that pre-authorizes Instruments to run UIAutomation scripts against iOS devices. You need this utility to run tests on real devices
+
+7) Install ios-deploy
+ios-deploy is a small utility to install and debug iPhone apps from the command line, without using Xcode.
+
+😎 Install ideviceinstaller
+ideviceinstaller is a tool to interact with the installation_proxy
+of an iOS device allowing to install, upgrade, uninstall, archive, restore
+and enumerate installed or archived apps. You also need this utility to run tests on real devices.
+
+9) Install ios_webkit_debug_proxy
+Appium uses this tool to access web views on real iOS devices. In terminal, run the following command
+
+10) Install Appium
+Appium is an open source test automation framework for use with native, hybrid and mobile web apps. It drives iOS, Android and Windows mobile apps using the WebDriver protocol.
+
+11) Install Appium Doctor
+Appium doctor is a mini software that checks all (well, almost all) of the preconditions for appium to run successfully.
+
+12) Install Maven
+Maven is a tool used for building and managing Java-based projects.
+
+13) Install Eclipse
+Eclipse is the Integrated Development Environment (IDE) that we are going to use to write, compile and run our test scripts.
+
+14) Install TestNG
+TestNG is a testing framework that we’ll be using to manage our automated test suite.
+
+currently i am checking with avadhoot and we are able to launch mobile on appium but getting error while opening as Error: "Unable to launch WebDriver agent"

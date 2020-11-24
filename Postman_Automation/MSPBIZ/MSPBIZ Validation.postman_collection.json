@@ -1,0 +1,1434 @@
+{
+	"info": {
+		"_postman_id": "e3121fdc-2125-4b1b-88cc-0742bc6bd91d",
+		"name": "MSPBIZ Validation",
+		"description": "This collection is for MSP Business API validation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Registration",
+			"item": [
+				{
+					"name": "Register (NRC)",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "9954e39e-6cf8-4969-b5fc-2078f170ce87",
+								"exec": [
+									"\r",
+									"pm.globals.set('MobileNo',_.random(00000000, 99999999));\r",
+									"\r",
+									"pm.globals.set('NRC_ID',_.random(000000, 999999));"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "6d1696e7-c83a-4a2f-a445-5c179f1e9377",
+								"exec": [
+									"pm.test(\"Getting response code as 000\",function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.responseCode).to.eql(\"E03\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Getting response desc as Success\",function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.responseDesc).to.eql(\"The BusinessName field is required.\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{oauth_token}}",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"companyId\": \"008\",\n    \"email\": \"09798306003-msw-user@2c2p.com\",\n    \"firstNameEng\": \"Postaman automation\",\n    \"firstNameLocal\": \"Postaman automation\",\n    \"idNumber\": \"432235ds\",\n    \"languageCode\": \"EN\",\n    \"mobileCountryCode\": \"647\",\n    \"mobileNo\": \"09798306003\",\n    \"nationalityId\": \"7\",\n    \"otpVerificationId\": \"\",\n    \"registerChannelId\": 1,\n    \"title\": \"apishop\",\n    \"typeOfId\": 3,\n    \"userDefine1\": \"\",\n        \"shopAddress\": {\n    \t\"addressNo\": \"123 asdasbd\",\n    \t\"addressStreet\": \"sdadsa\",\n    \t\"city\": \"pune\",\n    \t\"postalCode\": \"411052\"\n  }\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MSPBIZ_Base_URL}}/AppController/v1/customer/registration",
+							"host": [
+								"{{MSPBIZ_Base_URL}}"
+							],
+							"path": [
+								"AppController",
+								"v1",
+								"customer",
+								"registration"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Login To MSBIZ",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "46e8de9f-1f7a-4fa7-91e6-6281109811c8",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.environment.set(\"MSPBIZ_oauth_token\", jsonData.token);",
+									"pm.environment.set(\"wallet_unique_id\", jsonData.walletUniqueId);",
+									"pm.environment.set(\"customer_id\", jsonData.customerId);",
+									"pm.environment.set(\"mobile_no\", jsonData.merchantInfo.merchantMSPMobile);",
+									"",
+									"pm.test(\"Login Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Login Response code is 000\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.responseCode).to.eql(\"000\");",
+									"});",
+									"",
+									"pm.test(\"Login Response Description is Success\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.responseDesc).to.eql(\"Success\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept-Language",
+								"type": "text",
+								"value": "en-US"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"deviceId\": \"f06cca8a56268f33\",\n    \"deviceOS\": \"android\",\n    \"deviceToken\": \"ev5JxYaYSYydcBQn1v1V7p:APA91bHyInsWLaYKeGU67DxTZZrDHIsPnDeyTQzR4nmjlQmXJJtKZh-p71WHS2Yh0kOVrE9scQ6SZwAEAuYRL9FWsHJ_5zUE0ZEDiB_eviiNCipn_-qPNgUEUOi4o0DvF4UPGtiqC2XP\",\n    \"email\": \"api@automation.com\",\n    \"mobileCountryCode\": \"95\",\n    \"mobileNo\": \"33309798308016\",\n    \"passcode\": \"111111\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MSPBIZ_Base_URL}}/AppController/v1/customer/login",
+							"host": [
+								"{{MSPBIZ_Base_URL}}"
+							],
+							"path": [
+								"AppController",
+								"v1",
+								"customer",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Profile of User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "776ab774-f8af-4228-98e0-541c08e252eb",
+								"exec": [
+									"pm.test(\"Get profile code is 000\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.responseCode).to.eql(\"000\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"profile Response Description is Success\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.responseDesc).to.eql(\"Success\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{MSPBIZ_oauth_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MSPBIZ_Base_URL}}/AppController/v1/merchants/profile",
+							"host": [
+								"{{MSPBIZ_Base_URL}}"
+							],
+							"path": [
+								"AppController",
+								"v1",
+								"merchants",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login To MSBIZ Invalid Mobile No",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8515b783-d4fc-4640-91e7-adba852064e7",
+								"exec": [
+									"pm.test(\"Mobileno is Invalid\",function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.responseCode).to.eql(\"E03\");",
+									"});",
+									"",
+									"pm.test(\"Cannot Login\",function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.responseDesc).to.eql(\"U06\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept-Language",
+								"type": "text",
+								"value": "en-US"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"deviceId\": \"f06cca8a56268f33\",\n    \"deviceOS\": \"android\",\n    \"deviceToken\": \"ev5JxYaYSYydcBQn1v1V7p:APA91bHyInsWLaYKeGU67DxTZZrDHIsPnDeyTQzR4nmjlQmXJJtKZh-p71WHS2Yh0kOVrE9scQ6SZwAEAuYRL9FWsHJ_5zUE0ZEDiB_eviiNCipn_-qPNgUEUOi4o0DvF4UPGtiqC2XP\",\n    \"email\": \"api@automation.com\",\n    \"mobileCountryCode\": \"95\",\n    \"mobileNo\": \"3339798308016\",\n    \"passcode\": \"111111\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MSPBIZ_Base_URL}}/AppController/v1/customer/login",
+							"host": [
+								"{{MSPBIZ_Base_URL}}"
+							],
+							"path": [
+								"AppController",
+								"v1",
+								"customer",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login To MSBIZ Invalid Passcode",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4da9ac01-af66-432f-ba51-a148697e0549",
+								"exec": [
+									"pm.test(\"Passcode is invalid\",function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.responseCode).to.eql(\"999\");",
+									"});",
+									"",
+									"pm.test(\"Cannot login\",function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.resDescription).to.eql(\"Fail\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept-Language",
+								"type": "text",
+								"value": "en-US"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"deviceId\": \"f06cca8a56268f33\",\n    \"deviceOS\": \"android\",\n    \"deviceToken\": \"ev5JxYaYSYydcBQn1v1V7p:APA91bHyInsWLaYKeGU67DxTZZrDHIsPnDeyTQzR4nmjlQmXJJtKZh-p71WHS2Yh0kOVrE9scQ6SZwAEAuYRL9FWsHJ_5zUE0ZEDiB_eviiNCipn_-qPNgUEUOi4o0DvF4UPGtiqC2XP\",\n    \"email\": \"api@automation.com\",\n    \"mobileCountryCode\": \"95\",\n    \"mobileNo\": \"33309798308016\",\n    \"passcode\": \"111112\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MSPBIZ_Base_URL}}/AppController/v1/customer/login",
+							"host": [
+								"{{MSPBIZ_Base_URL}}"
+							],
+							"path": [
+								"AppController",
+								"v1",
+								"customer",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login To MSBIZ Invalid email",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e33d3588-ed91-48c7-bcb1-3ab830594fb2",
+								"exec": [
+									"",
+									"",
+									"pm.test(\"Login Response code is 000\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.responseCode).to.eql(\"000\");",
+									"});",
+									"",
+									"pm.test(\"Login Response Description is Success\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.responseDesc).to.eql(\"Success\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept-Language",
+								"type": "text",
+								"value": "en-US"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"deviceId\": \"f06cca8a56268f33\",\n    \"deviceOS\": \"android\",\n    \"deviceToken\": \"ev5JxYaYSYydcBQn1v1V7p:APA91bHyInsWLaYKeGU67DxTZZrDHIsPnDeyTQzR4nmjlQmXJJtKZh-p71WHS2Yh0kOVrE9scQ6SZwAEAuYRL9FWsHJ_5zUE0ZEDiB_eviiNCipn_-qPNgUEUOi4o0DvF4UPGtiqC2XP\",\n    \"email\": \"api@gmail.com\",\n    \"mobileCountryCode\": \"95\",\n    \"mobileNo\": \"33309798308016\",\n    \"passcode\": \"111111\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MSPBIZ_Base_URL}}/AppController/v1/customer/login",
+							"host": [
+								"{{MSPBIZ_Base_URL}}"
+							],
+							"path": [
+								"AppController",
+								"v1",
+								"customer",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login To MSBIZ Blank Mobile No",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8230ae4a-df55-4c9a-a34e-9325ce209c00",
+								"exec": [
+									"pm.test(\"Mobileno is Blank\",function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.responseCode).to.eql(\"E03\");",
+									"});",
+									"",
+									"pm.test(\"Cannot Login\",function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.responseDesc).to.eql(\"E05\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept-Language",
+								"type": "text",
+								"value": "en-US"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"deviceId\": \"f06cca8a56268f33\",\n    \"deviceOS\": \"android\",\n    \"deviceToken\": \"ev5JxYaYSYydcBQn1v1V7p:APA91bHyInsWLaYKeGU67DxTZZrDHIsPnDeyTQzR4nmjlQmXJJtKZh-p71WHS2Yh0kOVrE9scQ6SZwAEAuYRL9FWsHJ_5zUE0ZEDiB_eviiNCipn_-qPNgUEUOi4o0DvF4UPGtiqC2XP\",\n    \"email\": \"api@automation.com\",\n    \"mobileCountryCode\": \"95\",\n    \"mobileNo\": \"\",\n    \"passcode\": \"111111\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MSPBIZ_Base_URL}}/AppController/v1/customer/login",
+							"host": [
+								"{{MSPBIZ_Base_URL}}"
+							],
+							"path": [
+								"AppController",
+								"v1",
+								"customer",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login To MSBIZ Blank Passcode",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9d3bad2f-ff52-411c-aae0-f55db1f0043e",
+								"exec": [
+									"pm.test(\"Passcode is blank\",function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.responseCode).to.eql(\"E03\");",
+									"});",
+									"",
+									"pm.test(\"Cannot Login\",function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.responseDesc).to.eql(\"E05\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept-Language",
+								"type": "text",
+								"value": "en-US"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"deviceId\": \"f06cca8a56268f33\",\n    \"deviceOS\": \"android\",\n    \"deviceToken\": \"ev5JxYaYSYydcBQn1v1V7p:APA91bHyInsWLaYKeGU67DxTZZrDHIsPnDeyTQzR4nmjlQmXJJtKZh-p71WHS2Yh0kOVrE9scQ6SZwAEAuYRL9FWsHJ_5zUE0ZEDiB_eviiNCipn_-qPNgUEUOi4o0DvF4UPGtiqC2XP\",\n    \"email\": \"api@automation.com\",\n    \"mobileCountryCode\": \"95\",\n    \"mobileNo\": \"33309798308016\",\n    \"passcode\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MSPBIZ_Base_URL}}/AppController/v1/customer/login",
+							"host": [
+								"{{MSPBIZ_Base_URL}}"
+							],
+							"path": [
+								"AppController",
+								"v1",
+								"customer",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login To MSBIZ Blank email ",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "58a3c152-2837-489f-a7dd-e5a1594c1ebc",
+								"exec": [
+									"",
+									"pm.test(\"Login Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Login Response code is 000\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.responseCode).to.eql(\"000\");",
+									"});",
+									"",
+									"pm.test(\"Login Response Description is Success\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.responseDesc).to.eql(\"Success\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept-Language",
+								"type": "text",
+								"value": "en-US"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"deviceId\": \"f06cca8a56268f33\",\n    \"deviceOS\": \"android\",\n    \"deviceToken\": \"ev5JxYaYSYydcBQn1v1V7p:APA91bHyInsWLaYKeGU67DxTZZrDHIsPnDeyTQzR4nmjlQmXJJtKZh-p71WHS2Yh0kOVrE9scQ6SZwAEAuYRL9FWsHJ_5zUE0ZEDiB_eviiNCipn_-qPNgUEUOi4o0DvF4UPGtiqC2XP\",\n    \"email\": \"\",\n    \"mobileCountryCode\": \"95\",\n    \"mobileNo\": \"33309798308016\",\n    \"passcode\": \"111111\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MSPBIZ_Base_URL}}/AppController/v1/customer/login",
+							"host": [
+								"{{MSPBIZ_Base_URL}}"
+							],
+							"path": [
+								"AppController",
+								"v1",
+								"customer",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Login to MSPBIZ",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Refund",
+			"item": [
+				{
+					"name": "Login To MSP",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5cba3546-5ad8-4043-9077-6d9cf37d15b4",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.environment.set(\"MSP_oauth_token\", jsonData.token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept-Language",
+								"type": "text",
+								"value": "en-US"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"deviceId\": \"9781B7A7-4286-4E5E-890C-6E67C613F5A0\",\n    \"deviceOS\": \"ios\",\n    \"deviceToken\": \"100bafbb2fb0a1e910e4799a6ddb3a66b1cc6dc6bb6fb38201d34696e61fd63b\",\n    \"email\": \"09798308001-msw-user@2c2p.com\",\n    \"mobileCountryCode\": \"95\",\n    \"mobileNo\": \"09798305240\",\n    \"passcode\": \"111111\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MSP_Base_URL}}/AppController/v1/customer/login",
+							"host": [
+								"{{MSP_Base_URL}}"
+							],
+							"path": [
+								"AppController",
+								"v1",
+								"customer",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Transfer to Merchant",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "11ba30e3-00ee-4340-ad8e-0753d1789544",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "1104f789-724f-4569-8bcf-6ba6a9c85ac0",
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"pm.environment.set(\"Trans_Id_For_Refund\", jsonData.transactionId);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{MSP_oauth_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"note\": \"Check Refund\",\n    \"amount\": \"10\",\n    \"receiverMobileNo\": \"33309798308016\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MSP_Base_URL}}/AppController/v1/transactions",
+							"host": [
+								"{{MSP_Base_URL}}"
+							],
+							"path": [
+								"AppController",
+								"v1",
+								"transactions"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OTP Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{oauth_token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"companyId\": \"008\",\n    \"deviceId\": \"00000000-4188-3284-ffff-ffffef05ac4a\",\n    \"email\": \"\",\n    \"mobileCountryCode\": \"95\",\n    \"mobileNo\": \"0998765412\",\n    \"requestBy\": 1,\n    \"verifyType\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{gip_api_url}}/GipMobile/api/v2/OTP/Request",
+									"host": [
+										"{{gip_api_url}}"
+									],
+									"path": [
+										"GipMobile",
+										"api",
+										"v2",
+										"OTP",
+										"Request"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 03 Mar 2020 10:56:34 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "110"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "-1"
+								},
+								{
+									"key": "Server",
+									"value": ""
+								},
+								{
+									"key": "X-AspNet-Version",
+									"value": ""
+								},
+								{
+									"key": "X-Powered-By",
+									"value": ""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"otpPrefix\": \"BXSN\",\n    \"responseCode\": \"000\",\n    \"resDescriptionEN\": \"Success\",\n    \"resDescriptionTH\": \"สำเร็จ\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Login To MSBIZ",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8e88afcb-0ed0-4b11-8b9e-63565cf95f28",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.environment.set(\"MSPBIZ_oauth_token\", jsonData.token);",
+									"pm.environment.set(\"wallet_unique_id\", jsonData.walletUniqueId);",
+									"pm.environment.set(\"customer_id\", jsonData.customerId);",
+									"pm.environment.set(\"mobile_no\", jsonData.merchantInfo.merchantMSPMobile);",
+									"",
+									"pm.test(\"Login Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Login Response code is 000\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.responseCode).to.eql(\"000\");",
+									"});",
+									"",
+									"pm.test(\"Login Response Description is Success\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.responseDesc).to.eql(\"Success\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept-Language",
+								"type": "text",
+								"value": "en-US"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"deviceId\": \"f06cca8a56268f33\",\n    \"deviceOS\": \"android\",\n    \"deviceToken\": \"ev5JxYaYSYydcBQn1v1V7p:APA91bHyInsWLaYKeGU67DxTZZrDHIsPnDeyTQzR4nmjlQmXJJtKZh-p71WHS2Yh0kOVrE9scQ6SZwAEAuYRL9FWsHJ_5zUE0ZEDiB_eviiNCipn_-qPNgUEUOi4o0DvF4UPGtiqC2XP\",\n    \"email\": \"api@automation.com\",\n    \"mobileCountryCode\": \"95\",\n    \"mobileNo\": \"33309798308016\",\n    \"passcode\": \"111111\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MSPBIZ_Base_URL}}/AppController/v1/customer/login",
+							"host": [
+								"{{MSPBIZ_Base_URL}}"
+							],
+							"path": [
+								"AppController",
+								"v1",
+								"customer",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refund",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d1958f57-7cf8-4acb-bb4f-f0b2986a4695",
+								"exec": [
+									"pm.test(\"Refund Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Refund Response code is 000\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.responseCode).to.eql(\"000\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Refund Response Description is Success\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.responseDesc).to.eql(\"Success\");\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{MSPBIZ_oauth_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"transactionId\": {{Trans_Id_For_Refund}},\n    \"deviceInfo\": {\n        \"appVersion\": \"1.0.0 (67) \",\n        \"deviceId\": \"00000000-6aa8-3f6c-ffff-ffffef05ac4a\",\n        \"deviceModel\": \"AOSP on IA Emulator\",\n        \"lat\": \"\",\n        \"lng\": \"\",\n        \"osVersion\": \"9\",\n        \"platform\": \"Android\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{MSPBIZ_Base_URL}}/AppController/v1/transactions/refund",
+							"host": [
+								"{{MSPBIZ_Base_URL}}"
+							],
+							"path": [
+								"AppController",
+								"v1",
+								"transactions",
+								"refund"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refund Balnk Transaction Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5cf3c2f8-fa9d-4fb6-b240-eb1a6e006af6",
+								"exec": [
+									"pm.test(\"Refund Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Refund Response code is 000\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.responseCode).to.eql(\"E03\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Refund Balank transaction\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.responseDesc).to.eql(\"Error converting value \\\"\\\" to type 'System.Int64'. Path 'transactionId', line 2, position 23.\");\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{MSPBIZ_oauth_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"transactionId\": \"\",\n    \"deviceInfo\": {\n        \"appVersion\": \"1.0.0 (67) \",\n        \"deviceId\": \"00000000-6aa8-3f6c-ffff-ffffef05ac4a\",\n        \"deviceModel\": \"AOSP on IA Emulator\",\n        \"lat\": \"\",\n        \"lng\": \"\",\n        \"osVersion\": \"9\",\n        \"platform\": \"Android\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{MSPBIZ_Base_URL}}/AppController/v1/transactions/refund",
+							"host": [
+								"{{MSPBIZ_Base_URL}}"
+							],
+							"path": [
+								"AppController",
+								"v1",
+								"transactions",
+								"refund"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Already Refunded",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9686eb05-1c2b-4936-bc3f-a7a34b00c54e",
+								"exec": [
+									"pm.test(\"Refund Response Description is Transaction already refunded\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.responseDesc).to.eql(\"Transaction already refunded\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{MSPBIZ_oauth_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"transactionId\": {{Trans_Id_For_Refund}},\n    \"deviceInfo\": {\n        \"appVersion\": \"1.0.0 (67) \",\n        \"deviceId\": \"00000000-6aa8-3f6c-ffff-ffffef05ac4a\",\n        \"deviceModel\": \"AOSP on IA Emulator\",\n        \"lat\": \"\",\n        \"lng\": \"\",\n        \"osVersion\": \"9\",\n        \"platform\": \"Android\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{MSPBIZ_Base_URL}}/AppController/v1/transactions/refund",
+							"host": [
+								"{{MSPBIZ_Base_URL}}"
+							],
+							"path": [
+								"AppController",
+								"v1",
+								"transactions",
+								"refund"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User must be fund receiver",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "45dcbb1a-1d2b-47d7-9cbc-a9266aea3fa6",
+								"exec": [
+									"pm.test(\"User must be fund receiver\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.responseDesc).to.eql(\"Cannot refund transaction. User must be fund receiver\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{MSPBIZ_oauth_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"transactionId\": 1408110,\n    \"deviceInfo\": {\n        \"appVersion\": \"1.0.0 (67) \",\n        \"deviceId\": \"00000000-6aa8-3f6c-ffff-ffffef05ac4a\",\n        \"deviceModel\": \"AOSP on IA Emulator\",\n        \"lat\": \"\",\n        \"lng\": \"\",\n        \"osVersion\": \"9\",\n        \"platform\": \"Android\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{MSPBIZ_Base_URL}}/AppController/v1/transactions/refund",
+							"host": [
+								"{{MSPBIZ_Base_URL}}"
+							],
+							"path": [
+								"AppController",
+								"v1",
+								"transactions",
+								"refund"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "03e3f880-ac25-452a-b262-3a0c467b233b",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "957da090-73db-42ce-9314-8e0b032de1e2",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Inbox Message:- Read, Unread, Del Copy",
+			"item": [
+				{
+					"name": "Login To MSPBIZ",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "cc65cb43-9bd8-42d2-9998-9059f34c3f6a",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.environment.set(\"Inbox_token\", jsonData.token);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept-Language",
+								"type": "text",
+								"value": "en-US"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"deviceId\": \"f06cca8a56268f33\",\n    \"deviceOS\": \"android\",\n    \"deviceToken\": \"ev5JxYaYSYydcBQn1v1V7p:APA91bHyInsWLaYKeGU67DxTZZrDHIsPnDeyTQzR4nmjlQmXJJtKZh-p71WHS2Yh0kOVrE9scQ6SZwAEAuYRL9FWsHJ_5zUE0ZEDiB_eviiNCipn_-qPNgUEUOi4o0DvF4UPGtiqC2XP\",\n    \"email\": \"api@automation.com\",\n    \"mobileCountryCode\": \"95\",\n    \"mobileNo\": \"33309798308016\",\n    \"passcode\": \"111111\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MSPBIZ_Base_URL}}/AppController/v1/customer/login",
+							"host": [
+								"{{MSPBIZ_Base_URL}}"
+							],
+							"path": [
+								"AppController",
+								"v1",
+								"customer",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Message List for New Message",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "88966715-fe25-4693-99bb-b5bc9e311fa3",
+								"exec": [
+									"var MList = pm.response.json([]);\r",
+									"pm.environment.set(\"MSGID\", MList.items[0].id);\r",
+									"\r",
+									"pm.test(\"Get List Response code is 000\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.responseCode).to.eql(\"000\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Get List Response Description is Success\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.responseDesc).to.eql(\"Success\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"New Mesaage Status should false\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(MList.items[0].read).to.eql(false);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{Inbox_token}}"
+							},
+							{
+								"key": "Accept-Language",
+								"type": "text",
+								"value": "en-US"
+							}
+						],
+						"url": {
+							"raw": "{{MSPBIZ_Base_URL}}/AppController/v1/messages/search?pageNo=1&size=10",
+							"host": [
+								"{{MSPBIZ_Base_URL}}"
+							],
+							"path": [
+								"AppController",
+								"v1",
+								"messages",
+								"search"
+							],
+							"query": [
+								{
+									"key": "pageNo",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Message inbox mark as read Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "dfa4c24b-65c8-4b0d-90b4-4e5c000e9aad",
+								"exec": [
+									"pm.test(\"MSG Read Response code is 000\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.responseCode).to.eql(\"000\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"MSG Read Response Description is Success\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.responseDesc).to.eql(\"Success\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{Inbox_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"messageIds\": [\n    {{MSGID}}\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MSPBIZ_Base_URL}}/AppController/v1/messages/read",
+							"host": [
+								"{{MSPBIZ_Base_URL}}"
+							],
+							"path": [
+								"AppController",
+								"v1",
+								"messages",
+								"read"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Message inbox mark as unread Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "71eed829-3904-4554-a392-a9de280e547b",
+								"exec": [
+									"pm.test(\"MSG Read Response code is 000\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.responseCode).to.eql(\"000\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"MSG Read Response Description is Success\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.responseDesc).to.eql(\"Success\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{Inbox_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"messageIds\": [\r\n   {{MSGID}}\r\n  ]\r\n}\r\n"
+						},
+						"url": {
+							"raw": "{{MSPBIZ_Base_URL}}/AppController/v1/messages/unread",
+							"host": [
+								"{{MSPBIZ_Base_URL}}"
+							],
+							"path": [
+								"AppController",
+								"v1",
+								"messages",
+								"unread"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -1,0 +1,20 @@
+*** Variable ****
+${WaitMBtn}     id=com.ccpp.msp.uat:id/iv_movie
+${Micon}        android=UiSelector().text("MOVIE")
+${canalicon}    android=UiSelector().text("Canal+")
+${CanalTextB}   id=com.ccpp.msp.uat:id/edtCardNumber
+${CanalNext}    id=com.ccpp.msp.uat:id/btnInternetNext
+${CanalConf}    android=UiSelector().text("CONFIRM")
+${canal+icon}   android=UiSelector().text("Canal+")
+${Pkgupgrade}   id=com.ccpp.msp.uat:id/rbPackUpgrade
+${Cardnum}      id=com.ccpp.msp.uat:id/edtCardNumber
+${CnlNxticon}   android=UiSelector().text("NEXT")
+${Okbtnid}      id=com.ccpp.msp.uat:id/btnOk
+${OKICON}       android=UiSelector().text("OK")
+${VIUIcon}      android=UiSelector().text("VIU")
+${WAmout}       android=UiSelector().text("1,500")
+${MaharIcon}    android=UiSelector().text("Mahar Mobile")
+${Wmahar}       android=UiSelector().text("1,999")
+${Outofstock}   android=UiSelector().text("Out of stock.")
+${Lalakyi}      android=UiSelector().text("La La Kyi ePin")
+${Wlalakyi}     android=UiSelector().text("500")

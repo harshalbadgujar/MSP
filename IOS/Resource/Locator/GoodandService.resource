@@ -1,0 +1,33 @@
+***Variable***
+${ServiceMainMenu}    xpath=//XCUIElementTypeStaticText[@name="Goods and Services"]
+${clickmiscellaneous}     xpath=//XCUIElementTypeStaticText[@name="Miscellaneous"]
+${MiscellaneousMenu}      xpath=//XCUIElementTypeStaticText[@name="Miscellaneous"]
+${clickbasmerchant}      xpath=//XCUIElementTypeStaticText[@name="bas merchant"]
+${TransferMainMenu}      xpath=//XCUIElementTypeStaticText[@name="Transfer"]
+${Amountfield}           xpath=//XCUIElementTypeTextField[@name="amount_textfield"]
+${Notefield}             xpath=//XCUIElementTypeTextField[@name="note_textfield"]
+${Travelmenu}            xpath=//XCUIElementTypeStaticText[@name="Insurance"]
+${NEXTbutton}            xpath=//XCUIElementTypeButton[@name="next_button"]
+${Confirmationtitle}     xpath=//XCUIElementTypeStaticText[@name="CONFIRMATION"]
+${Receivername}          xpath=//XCUIElementTypeStaticText[@name="receiver_name_label"]
+${Successpage}           xpath=//XCUIElementTypeStaticText[@name="result_title_label"]
+${Successamount}         xpath=//XCUIElementTypeStaticText[@name="amount_label"]
+${SuccessFee}            xpath=//XCUIElementTypeStaticText[@name="fee_label"]
+${backtohome}            xpath=//XCUIElementTypeButton[@name="back_to_home_button"]
+${receivernumber}        xpath=//XCUIElementTypeStaticText[@name="receiver_detail_label"]
+${hamgoods}              xpath=//XCUIElementTypeButton[@name="goods_and_services_button"]
+${donekeypad}            xpath=//XCUIElementTypeButton[@name="Done"]
+${searchfield}           xpath=//XCUIElementTypeSearchField[@name="Search for Merchant"]
+${searchbtn}             xpath=//XCUIElementTypeButton[@name="Search"]
+${selectfirst}           xpath=//XCUIElementTypeTable[@name="Search results"]/XCUIElementTypeCell[1]
+${goodserror}            xpath=//XCUIElementTypeStaticText[@name="description_label"]
+${actuallerror}          Insufficient Balance
+${goodspopupok}          xpath=//XCUIElementTypeButton[@name="constructive_button"]
+${phonenofield}          xpath=//XCUIElementTypeTextField[@name="phone_textfield"]
+${notefield}             xpath=//XCUIElementTypeTextField[@name="note_textfield"]
+${Gmerscrollup}        //XCUIElementTypeStaticText[@name="Transfer"]
+${Gmerscrolldown}      //XCUIElementTypeTextField[@name="note_textfield"]
+${goodscrossbtn}      //XCUIElementTypeButton[@name="close_button"]
+
+
+

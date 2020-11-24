@@ -1,0 +1,30 @@
+*** Variable ***
+${Humberger_Menu}   id=com.ccpp.msp.uat:id/iv_humberger_menu
+${Hum_Trans}         android=UiSelector().text("TRANSFER")
+${WalletTopup}      id=com.ccpp.msp.uat:id/tvWalletTopup
+${Hum_Scan}         android=UiSelector().text("SCAN")
+${Toolbar}          id=com.ccpp.msp.uat:id/title
+${Hum_Back}         id=com.ccpp.msp.uat:id/iconStart
+${Hum_pay}          android=UiSelector().text("PAY")
+${Wallet_No}        id=com.ccpp.msp.uat:id/txtWalletNo
+${HumbtnBack}       id=com.ccpp.msp.uat:id/iconStart
+${Hum_rece}         android=UiSelector().text("RECEIVE")
+${ToolbarTitle}     id=com.ccpp.msp.uat:id/title
+${Hum_AM}           android=UiSelector().text("ADD MONEY")
+${Topuplimit}       id=com.ccpp.msp.uat:id/tvTopupLimit
+${Hum_eload}        android=UiSelector().text("ELOAD")
+${Hum_EdtEld}       id=com.ccpp.msp.uat:id/edtMobile
+${HUM_RTP}          android=UiSelector().text("RTP")
+${HUM_iNDEX}        //android.widget.TextView[@index=0]
+${HUM_BILLS}        android=UiSelector().text("BILLS")
+${H_BillerNm}       id=com.ccpp.msp.uat:id/txtBillerName
+${Hum_Gifts}        android=UiSelector().text("GIFTS")
+${HText_Date}       id=com.ccpp.msp.uat:id/txtDate
+${H_internet}       android=UiSelector().text("INTERNET")
+${H_Movie}          android=UiSelector().text("MOVIE")
+${h_Gnd}            android=UiSelector().text("GOODS AND SERVICES")
+${txtTitleType}     id=com.ccpp.msp.uat:id/title
+${Avai_Bal}         id=com.ccpp.msp.uat:id/tvAvailableBalanceValue
+${H_topup}          id=com.ccpp.msp.uat:id/iv_wallet_topup
+${W_Bal}            id=com.ccpp.msp.uat:id/tvWalletBal
+

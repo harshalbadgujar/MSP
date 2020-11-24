@@ -1,0 +1,395 @@
+<html>
+<head>
+<title>TestNG:  Default test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Default test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>48/1/0</td>
+</tr><tr>
+<td>Started on:</td><td>Thu Jun 18 13:19:43 IST 2020</td>
+</tr>
+<tr><td>Total time:</td><td>29 seconds (29339 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='Execute.Execute_cases.get_Meters()'><b>get_Meters</b><br>Test class: Execute.Execute_cases</td>
+<td><div><pre>java.lang.NullPointerException
+	at MSP_API.MSEC_Chart.GET_Meters(MSEC_Chart.java:38)
+	at Execute.Execute_cases.get_Meters(Execute_cases.java:165)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1510)
+	at org.testng.TestRunner.privateRun(TestRunner.java:766)
+	at org.testng.TestRunner.run(TestRunner.java:587)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1232631679", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1232631679'><pre>java.lang.NullPointerException
+	at MSP_API.MSEC_Chart.GET_Meters(MSEC_Chart.java:38)
+	at Execute.Execute_cases.get_Meters(Execute_cases.java:165)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1510)
+	at org.testng.TestRunner.privateRun(TestRunner.java:766)
+	at org.testng.TestRunner.run(TestRunner.java:587)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>Execute.Execute_cases@3c9d0b9d</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='Execute.Execute_cases.Authentication()'><b>Authentication</b><br>Test class: Execute.Execute_cases</td>
+<td></td>
+<td>7</td>
+<td>Execute.Execute_cases@3c9d0b9d</td></tr>
+<tr>
+<td title='Execute.Execute_cases.DB()'><b>DB</b><br>Test class: Execute.Execute_cases</td>
+<td></td>
+<td>0</td>
+<td>Execute.Execute_cases@3c9d0b9d</td></tr>
+<tr>
+<td title='Execute.Execute_cases.POST_OTP()'><b>POST_OTP</b><br>Test class: Execute.Execute_cases</td>
+<td></td>
+<td>0</td>
+<td>Execute.Execute_cases@3c9d0b9d</td></tr>
+<tr>
+<td title='Execute.Execute_cases.POST_OTP_Request()'><b>POST_OTP_Request</b><br>Test class: Execute.Execute_cases</td>
+<td></td>
+<td>0</td>
+<td>Execute.Execute_cases@3c9d0b9d</td></tr>
+<tr>
+<td title='Execute.Execute_cases.add_Address()'><b>add_Address</b><br>Test class: Execute.Execute_cases</td>
+<td></td>
+<td>0</td>
+<td>Execute.Execute_cases@3c9d0b9d</td></tr>
+<tr>
+<td title='Execute.Execute_cases.confirm_HiWiFi()'><b>confirm_HiWiFi</b><br>Test class: Execute.Execute_cases</td>
+<td></td>
+<td>1</td>
+<td>Execute.Execute_cases@3c9d0b9d</td></tr>
+<tr>
+<td title='Execute.Execute_cases.confirm_HiWiFi_mobile()'><b>confirm_HiWiFi_mobile</b><br>Test class: Execute.Execute_cases</td>
+<td></td>
+<td>1</td>
+<td>Execute.Execute_cases@3c9d0b9d</td></tr>
+<tr>
+<td title='Execute.Execute_cases.confirm_TeleData()'><b>confirm_TeleData</b><br>Test class: Execute.Execute_cases</td>
+<td></td>
+<td>1</td>
+<td>Execute.Execute_cases@3c9d0b9d</td></tr>
+<tr>
+<td title='Execute.Execute_cases.delete_Address()'><b>delete_Address</b><br>Test class: Execute.Execute_cases</td>
+<td></td>
+<td>0</td>
+<td>Execute.Execute_cases@3c9d0b9d</td></tr>
+<tr>
+<td title='Execute.Execute_cases.donate_List()'><b>donate_List</b><br>Test class: Execute.Execute_cases</td>
+<td></td>
+<td>0</td>
+<td>Execute.Execute_cases@3c9d0b9d</td></tr>
+<tr>
+<td title='Execute.Execute_cases.eload_Confirm_MPTData()'><b>eload_Confirm_MPTData</b><br>Test class: Execute.Execute_cases</td>
+<td></td>
+<td>0</td>
+<td>Execute.Execute_cases@3c9d0b9d</td></tr>
+<tr>
+<td title='Execute.Execute_cases.eload_Confirm_TeleData()'><b>eload_Confirm_TeleData</b><br>Test class: Execute.Execute_cases</td>
+<td></td>
+<td>0</td>
+<td>Execute.Execute_cases@3c9d0b9d</td></tr>
+<tr>
+<td title='Execute.Execute_cases.eload_Enq_TeleData()'><b>eload_Enq_TeleData</b><br>Test class: Execute.Execute_cases</td>
+<td></td>
+<td>0</td>
+<td>Execute.Execute_cases@3c9d0b9d</td></tr>
+<tr>
+<td title='Execute.Execute_cases.eload_enq_MPTData()'><b>eload_enq_MPTData</b><br>Test class: Execute.Execute_cases</td>
+<td></td>
+<td>0</td>
+<td>Execute.Execute_cases@3c9d0b9d</td></tr>
+<tr>
+<td title='Execute.Execute_cases.enq_HIWIFI_W0_Mobile()'><b>enq_HIWIFI_W0_Mobile</b><br>Test class: Execute.Execute_cases</td>
+<td></td>
+<td>0</td>
+<td>Execute.Execute_cases@3c9d0b9d</td></tr>
+<tr>
+<td title='Execute.Execute_cases.enq_HiWiFi()'><b>enq_HiWiFi</b><br>Test class: Execute.Execute_cases</td>
+<td></td>
+<td>0</td>
+<td>Execute.Execute_cases@3c9d0b9d</td></tr>
+<tr>
+<td title='Execute.Execute_cases.enq_MyanmarNetAWaThone()'><b>enq_MyanmarNetAWaThone</b><br>Test class: Execute.Execute_cases</td>
+<td></td>
+<td>0</td>
+<td>Execute.Execute_cases@3c9d0b9d</td></tr>
+<tr>
+<td title='Execute.Execute_cases.enq_MyanmarNetPrepaid()'><b>enq_MyanmarNetPrepaid</b><br>Test class: Execute.Execute_cases</td>
+<td></td>
+<td>4</td>
+<td>Execute.Execute_cases@3c9d0b9d</td></tr>
+<tr>
+<td title='Execute.Execute_cases.enq_TelenorDataPack()'><b>enq_TelenorDataPack</b><br>Test class: Execute.Execute_cases</td>
+<td></td>
+<td>0</td>
+<td>Execute.Execute_cases@3c9d0b9d</td></tr>
+<tr>
+<td title='Execute.Execute_cases.enq_telenor_Fiber()'><b>enq_telenor_Fiber</b><br>Test class: Execute.Execute_cases</td>
+<td></td>
+<td>0</td>
+<td>Execute.Execute_cases@3c9d0b9d</td></tr>
+<tr>
+<td title='Execute.Execute_cases.enq_telenor_Wireless()'><b>enq_telenor_Wireless</b><br>Test class: Execute.Execute_cases</td>
+<td></td>
+<td>0</td>
+<td>Execute.Execute_cases@3c9d0b9d</td></tr>
+<tr>
+<td title='Execute.Execute_cases.enquiry_Fees()'><b>enquiry_Fees</b><br>Test class: Execute.Execute_cases</td>
+<td></td>
+<td>0</td>
+<td>Execute.Execute_cases@3c9d0b9d</td></tr>
+<tr>
+<td title='Execute.Execute_cases.extractingJSON()'><b>extractingJSON</b><br>Test class: Execute.Execute_cases</td>
+<td></td>
+<td>0</td>
+<td>Execute.Execute_cases@3c9d0b9d</td></tr>
+<tr>
+<td title='Execute.Execute_cases.generated_Random_MNO()'><b>generated_Random_MNO</b><br>Test class: Execute.Execute_cases</td>
+<td></td>
+<td>0</td>
+<td>Execute.Execute_cases@3c9d0b9d</td></tr>
+<tr>
+<td title='Execute.Execute_cases.get_Address_Detail()'><b>get_Address_Detail</b><br>Test class: Execute.Execute_cases</td>
+<td></td>
+<td>0</td>
+<td>Execute.Execute_cases@3c9d0b9d</td></tr>
+<tr>
+<td title='Execute.Execute_cases.get_Address_List()'><b>get_Address_List</b><br>Test class: Execute.Execute_cases</td>
+<td></td>
+<td>0</td>
+<td>Execute.Execute_cases@3c9d0b9d</td></tr>
+<tr>
+<td title='Execute.Execute_cases.get_Greeting_Message()'><b>get_Greeting_Message</b><br>Test class: Execute.Execute_cases</td>
+<td></td>
+<td>0</td>
+<td>Execute.Execute_cases@3c9d0b9d</td></tr>
+<tr>
+<td title='Execute.Execute_cases.get_Internet_list()'><b>get_Internet_list</b><br>Test class: Execute.Execute_cases</td>
+<td></td>
+<td>0</td>
+<td>Execute.Execute_cases@3c9d0b9d</td></tr>
+<tr>
+<td title='Execute.Execute_cases.get_MSEC_District()'><b>get_MSEC_District</b><br>Test class: Execute.Execute_cases</td>
+<td></td>
+<td>0</td>
+<td>Execute.Execute_cases@3c9d0b9d</td></tr>
+<tr>
+<td title='Execute.Execute_cases.get_MSG_Detail()'><b>get_MSG_Detail</b><br>Test class: Execute.Execute_cases</td>
+<td></td>
+<td>0</td>
+<td>Execute.Execute_cases@3c9d0b9d</td></tr>
+<tr>
+<td title='Execute.Execute_cases.get_Marketing_msg_List()'><b>get_Marketing_msg_List</b><br>Test class: Execute.Execute_cases</td>
+<td></td>
+<td>0</td>
+<td>Execute.Execute_cases@3c9d0b9d</td></tr>
+<tr>
+<td title='Execute.Execute_cases.get_Monthly_details()'><b>get_Monthly_details</b><br>Test class: Execute.Execute_cases</td>
+<td></td>
+<td>0</td>
+<td>Execute.Execute_cases@3c9d0b9d</td></tr>
+<tr>
+<td title='Execute.Execute_cases.get_Unread_MSG_Count()'><b>get_Unread_MSG_Count</b><br>Test class: Execute.Execute_cases</td>
+<td></td>
+<td>0</td>
+<td>Execute.Execute_cases@3c9d0b9d</td></tr>
+<tr>
+<td title='Execute.Execute_cases.goods_By_Merchant_ID()'><b>goods_By_Merchant_ID</b><br>Test class: Execute.Execute_cases</td>
+<td></td>
+<td>0</td>
+<td>Execute.Execute_cases@3c9d0b9d</td></tr>
+<tr>
+<td title='Execute.Execute_cases.goods_Merchant_Category()'><b>goods_Merchant_Category</b><br>Test class: Execute.Execute_cases</td>
+<td></td>
+<td>0</td>
+<td>Execute.Execute_cases@3c9d0b9d</td></tr>
+<tr>
+<td title='Execute.Execute_cases.inquiry()'><b>inquiry</b><br>Test class: Execute.Execute_cases</td>
+<td></td>
+<td>0</td>
+<td>Execute.Execute_cases@3c9d0b9d</td></tr>
+<tr>
+<td title='Execute.Execute_cases.login()'><b>login</b><br>Test class: Execute.Execute_cases</td>
+<td></td>
+<td>0</td>
+<td>Execute.Execute_cases@3c9d0b9d</td></tr>
+<tr>
+<td title='Execute.Execute_cases.patch_Update_Nicjname()'><b>patch_Update_Nicjname</b><br>Test class: Execute.Execute_cases</td>
+<td></td>
+<td>0</td>
+<td>Execute.Execute_cases@3c9d0b9d</td></tr>
+<tr>
+<td title='Execute.Execute_cases.reg_Passport()'><b>reg_Passport</b><br>Test class: Execute.Execute_cases</td>
+<td></td>
+<td>0</td>
+<td>Execute.Execute_cases@3c9d0b9d</td></tr>
+<tr>
+<td title='Execute.Execute_cases.reload_123()'><b>reload_123</b><br>Test class: Execute.Execute_cases</td>
+<td></td>
+<td>0</td>
+<td>Execute.Execute_cases@3c9d0b9d</td></tr>
+<tr>
+<td title='Execute.Execute_cases.set_Pass()'><b>set_Pass</b><br>Test class: Execute.Execute_cases</td>
+<td></td>
+<td>0</td>
+<td>Execute.Execute_cases@3c9d0b9d</td></tr>
+<tr>
+<td title='Execute.Execute_cases.set_Primary_Address()'><b>set_Primary_Address</b><br>Test class: Execute.Execute_cases</td>
+<td></td>
+<td>0</td>
+<td>Execute.Execute_cases@3c9d0b9d</td></tr>
+<tr>
+<td title='Execute.Execute_cases.transfer()'><b>transfer</b><br>Test class: Execute.Execute_cases</td>
+<td></td>
+<td>0</td>
+<td>Execute.Execute_cases@3c9d0b9d</td></tr>
+<tr>
+<td title='Execute.Execute_cases.transfer_Lookup()'><b>transfer_Lookup</b><br>Test class: Execute.Execute_cases</td>
+<td></td>
+<td>0</td>
+<td>Execute.Execute_cases@3c9d0b9d</td></tr>
+<tr>
+<td title='Execute.Execute_cases.txn_search_History()'><b>txn_search_History</b><br>Test class: Execute.Execute_cases</td>
+<td></td>
+<td>0</td>
+<td>Execute.Execute_cases@3c9d0b9d</td></tr>
+<tr>
+<td title='Execute.Execute_cases.update_Address()'><b>update_Address</b><br>Test class: Execute.Execute_cases</td>
+<td></td>
+<td>0</td>
+<td>Execute.Execute_cases@3c9d0b9d</td></tr>
+<tr>
+<td title='Execute.Execute_cases.user_Details()'><b>user_Details</b><br>Test class: Execute.Execute_cases</td>
+<td></td>
+<td>1</td>
+<td>Execute.Execute_cases@3c9d0b9d</td></tr>
+<tr>
+<td title='Execute.Execute_cases.user_Donate_List()'><b>user_Donate_List</b><br>Test class: Execute.Execute_cases</td>
+<td></td>
+<td>0</td>
+<td>Execute.Execute_cases@3c9d0b9d</td></tr>
+</table><p>
+</body>
+</html>

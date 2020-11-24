@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
+    <classes>
+      <class name="Execute.Execute_cases">
+        <methods>
+          <include name="confirm_gifts_viberOut"/>
+          <include name="confirm_MyanmarNetPrepaid"/>
+          <include name="eLoad_Confirm_MPTDataPack"/>
+          <include name="confirm_gifts_iTunes"/>
+          <include name="confirm_gifts_SWSGD"/>
+          <include name="movies_Confirm_Vivu"/>
+          <include name="reload_123"/>
+          <include name="confirm_HiWiFi"/>
+          <include name="confirm_MyanmarNetAWaThone"/>
+          <include name="confirm_TeleData"/>
+          <include name="eLoad_Confirm_MyTelDataPack"/>
+          <include name="eLoad_Confirm_OoredooDataPack"/>
+          <include name="confirm_Telenor_Wireless"/>
+          <include name="eLoad_Confirm_TeleDataPack"/>
+          <include name="txn_search_History"/>
+          <include name="tearDown"/>
+          <include name="eLoad_Confirm_MPTeLoad"/>
+          <include name="confirm_HiWiFi_mobile"/>
+          <include name="confirm_Telenor_Fiber"/>
+          <include name="get_MSEC_District"/>
+          <include name="movies_Confirm_lalakyi"/>
+          <include name="movies_Confirm_CanalPlus"/>
+          <include name="movies_Confirm_mahar"/>
+          <include name="eLoad_Confirm_telenor_eload"/>
+          <include name="movies_enq_mahar"/>
+          <include name="setupTest"/>
+        </methods>
+      </class> <!-- Execute.Execute_cases -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

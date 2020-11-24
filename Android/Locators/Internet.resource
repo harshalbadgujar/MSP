@@ -1,0 +1,22 @@
+*** Variable ***
+${TransferButton}   android=UiSelector().text("Transfer")
+${Internet_btn}     id=com.ccpp.msp.uat:id/iv_internet
+${Ananda}           android=UiSelector().text("Ananda")
+${Ok_Btn}           android=UiSelector().text("OK")
+${Confirm}          android=UiSelector().text("CONFIRM")
+${Hi_Internet}      android=UiSelector().text("Hi Internet")
+${Hi_Internet}      android=UiSelector().text("Hi Internet")
+${Mynmr_int}        android=UiSelector().text("MyanmarNet Prepaid")
+${Ooredo}           android=UiSelector().text("Ooredoo Fiber")
+${CustomerId}       id=com.ccpp.msp.uat:id/edtCustomerId
+${CustomerNm}       id=com.ccpp.msp.uat:id/edtCustomerName
+${CustomerInvc}     id=com.ccpp.msp.uat:id/edtInvoiceNo
+${CustomerAmt}      id=com.ccpp.msp.uat:id/edtAmount
+${NextBtn}          android=UiSelector().text("NEXT")
+${Telenor_Fiber}    android=UiSelector().text("Telenor Fiber")
+${editMo}           id=com.ccpp.msp.uat:id/edtMobile
+${Internet}         android=UiSelector().text("INTERNET")
+${PopupTitle}       id=com.ccpp.msp.uat:id/tvTitle
+${PopupMsg}         id=com.ccpp.msp.uat:id/tvMsg
+${PopupOk}          id=com.ccpp.msp.uat:id/btnOk
+${Tap1}             //android.widget.TextView[@text='1']
